@@ -1,13 +1,12 @@
+main {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .map-main {
   position: relative;
   font-weight: 400;
   overflow-x: hidden;
-}
-
-.button-container {
-  width: 70%;
-  margin: 0 auto;
-  /* padding-top:50px; */
 }
 
 .map-text {
@@ -87,19 +86,18 @@
   font-size: 0.8rem;
   word-wrap: break-word;
   display: flex;
+  color: black;
 }
 
 .ftext {
-  /* line-height: 1.2; */
-  font-size: 2rem;
+  font-size: 15px;
   word-wrap: break-word;
   display: flex;
 }
 
 .ftext2 {
-  /* line-height: 1.2; */
   background-color: white;
-  font-size: 1.4rem;
+  font-size: 13px;
   word-wrap: break-word;
   display: flex;
 }
@@ -131,82 +129,49 @@
   font-family: "makinas-4-square";
 }
 
-.exp {
-  font-size: 1rem;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-top: 50px;
+  width: 90vw;
+  margin: auto;
 }
-
-.button {
-  display: block;
-  float: left;
-  margin: 1%;
-  width: 18%;
-  height: 60px;
+.button-container .button {
+  width: 80px;
+  height: 40px;
   text-align: center;
-  border: #303030 1px solid;
-  border-radius: 20px;
+  font-size: 14px;
+  margin: 10px;
+  background-color: rgba(0, 0, 255, 0.082);
+  flex: 0 0 auto;
 }
-.button-1:hover {
-  background-color: rgba(255, 0, 8, 0.662745098);
+.button-container .button-1:hover {
+  background-color: rgba(236, 70, 76, 0.662745098);
 }
-.button-2:hover {
+.button-container .button-2:hover {
   background-color: rgba(255, 242, 0, 0.7019607843);
 }
-.button-3:hover {
+.button-container .button-3:hover {
   background-color: rgba(0, 213, 32, 0.6823529412);
 }
-.button-4:hover {
+.button-container .button-4:hover {
   background-color: rgba(0, 171, 250, 0.7019607843);
 }
-.button-5:hover {
+.button-container .button-5:hover {
   background-color: rgba(61, 71, 212, 0.5725490196);
 }
 
-@media screen and (min-width: 481px) {
-  .button-container {
-    display: flex;
+@media screen and (max-width: 610px) {
+  .circle_p_name {
+    font-size: 7px;
   }
-  .map-content {
-    display: none;
-    padding: 10px;
+  .map-link-name {
+    font-size: 7px;
   }
-}
-@media screen and (max-width: 480px) {
-  .map {
-    margin: 0 -20vw;
-    padding: 20px;
-  }
-  .map-scroll {
-    overflow: auto;
-  }
-  .map-image {
-    position: relative;
-    vertical-align: bottom;
-    width: 100%;
-    /* height: 100%; */
-  }
-  .map-main {
-    position: relative;
-    padding: 50px 10%;
-    font-weight: 400;
-    overflow-x: hidden;
-  }
-  .map-each {
-    width: 200%;
-  }
-  .nazo {
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 0;
-  }
-  .booth-container {
-    width: 149%;
-    position: absolute;
-    top: 15%;
-    bottom: 15%;
-    left: 26%;
-    right: 12.75%;
-  }
-  .button {
-    font-size: 20px;
+  .map-toilet-room {
+    font-size: 4px;
   }
 }/*# sourceMappingURL=map.css.map */

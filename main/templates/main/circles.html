@@ -2,38 +2,41 @@
 {% load static %}
 
 {% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 Circles
+2024年度 甲陽学院高等学校 音楽と展覧の会 CIRCLES
 {% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 {% endblock %}
 
 
 {% block contents %}
-<h2>Circles</h2>
+<h2>CIRCLES</h2>
 <div class="circles">
     
 
     <form method="GET" class="circles__form">
-        <i class="fas fa-search"></i>
+
         {{ form.keyword }}
-        <button type="submit" class="circles__form_submit">検索</button>
+        <button type="submit" class="circles__form_submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        
     </form>
     <div  class="circles__container">
         {% for circle in circles %}
         <div class="circles__container__block">
-            <a class="circles__container__block__link" href="{% url 'circles_detail' circle.pk %}">
+            <a href="{% url 'circles_detail' circle.pk %}">
+            <div class="circles__container__block__link" href="{% url 'circles_detail' circle.pk %}">
                 <div class="circles__container__block__logo">
                     {% if circle.logo %}
                     <img src="{{ circle.logo.url }}"  class="circles__container__block__logo_img"/>
                     {% else %}
                     {% endif %}
                 </div>
-                <p class="circles__container__block_name">{{ circle.name}}</p>
-            </a>
-            <a href="{% url 'map' %}">
-                <p class="circles__container__block_location"><span>@</span>{{ circle.location }}</p>
+                <p class="circles__container__block_name">{{ circle.name }}</p>
+            </div>
+            
+            <p class="circles__container__block_location"><span><i class="fa-solid fa-location-dot"></i></span>{{ circle.location }}</p>
             </a>
         </div>
 

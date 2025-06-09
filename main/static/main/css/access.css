@@ -1,1 +1,32 @@
-/*# sourceMappingURL=access.css.map */
+.access {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.7;
+}
+.access_time {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.access_map {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.access_map_iframe {
+  width: 80vw;
+  height: 40vw;
+}
+.access_attention {
+  font-size: 18px;
+  color: red;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.access_txt {
+  font-size: 15px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=access.css.map */

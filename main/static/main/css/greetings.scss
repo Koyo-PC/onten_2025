@@ -1,0 +1,76 @@
+.index{
+
+
+    &-message{
+        margin-bottom: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+        
+        &-content{
+
+            font-size: 18px;
+            font-stretch: expanded;
+            text-align: left;
+            line-height: 2;
+            & span {
+                padding-left: 1rem;
+            }
+        }
+        &-name{
+            font-size: 1.2rem;
+            margin: 5px;
+            text-align: right;
+            margin-bottom: 40px;
+            margin-right: 5%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .index{
+        &-message{
+            // width: 80vw;
+            margin-bottom: 30px;
+            &-title{
+                font-size: 2rem;
+            }
+            &-content{
+                font-size: 0.9rem;
+            }
+            &-name{
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+.member{
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    &-all{
+        margin-top: 20px;
+        font-size:20px;
+        // margin-left: 5%;
+    }
+    &-name{
+        font-size: 15px;
+        margin-top: 7px;
+        // margin-left: 5%;
+    }
+}
+.web__member {
+    & p {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+}

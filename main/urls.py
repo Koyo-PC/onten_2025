@@ -11,9 +11,8 @@ urlpatterns = [
     path("timetable",views.TimeTableView.as_view(),name="timetable"),
     path("circles",views.CirclesView.as_view(),name="circles"),
     path("circles_detail/<int:pk>", views.CirclesDetailView.as_view(), name="circles_detail"),
-    path("greetings",views.GreetingsView.as_view(),name="greetings"),
-
-
-
+    path("aboutus",views.AboutUsView.as_view(),name="aboutus"),
+    path("math",views.MathView.as_view(),name="math"),
+    path("ranking", views.RankingView.as_view(),name="ranking"),
 
 ]

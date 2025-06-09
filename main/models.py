@@ -14,3 +14,12 @@ class Circle(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse()
+    
+class Ranking(models.Model):
+    name = models.CharField(verbose_name="ニックネーム", max_length=20)
+    time = models.DurationField(verbose_name="0:01:23.45の形で")
+
+    def __str__(self):
+        return self.name
+    def get_absolute_url(self):
+        return reverse()

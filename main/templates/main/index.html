@@ -2,138 +2,81 @@
 {% load static %}
 
 {% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 ホーム
+2024年度 甲陽学院高等学校 音楽と展覧の会 Home
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'main/css/base.css'%}">
 <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
 {% endblock %}
 
 {% block contents %}
-<div id="password-protection">
-    <h2>Enter Password</h2>
-    <form id="passwordForm">
-        <input type="password" id="password" placeholder="Enter password">
-        <button type="submit">Submit</button>
-    </form>
-</div>
-<div id="content" style="display: none;">
-    <div class = "index-top">
-        <img src = "{% static 'main/images/rogo5.png' %}" class = "index-top-img">
-        <h1 class = "index-top-title">第77回<br>甲陽学院高等学校<br>音楽と展覧の会</h1>
-        <h1 class = "index-top-data">9.22 SUN</span><br>9:00~15:00</h1>
+    <div id = "load-img-pc">
+        <video autoplay muted playsinline src="{% static 'main/images/0001-0160.mp4' %}" width="100%"height="100%"></video>
     </div>
-    <div class = "index-countdown-box">
-        <p class = "index-countdown-title">開催まで</p>
-        <span class = "index-countdown-content"></span>
+    <div id = "load-img-phone">
+        <video autoplay muted playsinline src="{% static 'main/images/for_phone0001-0160.mp4' %}" width="100%"height="100%"></video>
     </div>
-    <!-- <div class = "index-message">
-        <h2 class = "index-message-title">挨拶</h2>
-        <p class = "index-message-content">
-            　平安時代の頃より、日本人は「花が咲く」というと桜の花を連想してきました。新しい季節の「はじまり」の象徴であるだけでなく、すぐに散ってしまう「はかなさ」を持つ桜の花は今もなお多くの人に愛されており、日本人の心といっても過言ではないでしょう。春には桜吹雪が花筏となって流れる夙川の傍に位置する甲陽学院は、そんな桜の花と百年を超える歴史を共に歩んできました。<br>
-            　我々が入学した頃には猛威を振るっていた感染症もすっかり下火となった今日が、音展にたった一瞬の「はかなさ」を持つ青春を燃やす甲陽生、音展を成功へと結んでくださるご来場の皆様、そして長きにわたり甲陽生と共に歩んできた先生方が一緒に笑顔を咲かせる「はじまり」の一日になれば幸いです。<br>
-            　どうぞ、お楽しみください。
-        </p>
-        <p class="index-message-name">音展委員長 小松 冬弥</p>
-        <p class = "index-message-content">
-            「桜桃梅李一時の春」は初代伊賀校長の愛誦された句です。自由な環境にあって、生徒の持つ強い自主性と豊かな個性を花々に準え建学の理念としました。昨年，音展はコロナ禍の困難を経て名実共に「New ERA」に突入しました。新時代到来後最初の音展のテーマが「咲－show－」です。生徒と伊賀先生、それぞれが音展と建学の理念の象徴として選んだモチーフが自由に咲き誇る花であるとはなんとも感慨深いものがあります。戦後より音展はその外形を大きく変えてきましたが，建学以来伊賀先生から生徒に継受された理想は変らずより強固になっていると感じます。進化し続ける音展を楽しみながら、その底流にある甲陽の精神を，感じて頂ければ幸いです。
-        </p>
-        <p class="index-message-name">生徒会長 永田 一真</p>
-    </div>
-    <div class="member">
-        
     
-        <h2 class="member-title">委員一覧</h2>
-                    
-        <h3 class="member-all">委員長</h3>
-        <p class="member-name">小松 冬弥</p>
+    <div class="image">
+    <img src = "{% static 'main/images/rogo5.png' %}" class = "image_image">
+    </div>
+    <div class="home">
+        <h3 class="home_num">第77回</h3>
+        <h1 class="home_koyo">甲陽学院高等学校</h1>
+        <h1 class="home_onten">音楽と展覧の会</h1>
 
-        <h3 class="member-all">副委員長</h3>
-        <p class="member-name">鏑木 陽斗　　長谷部 佑真　　玉置 健一</p>       
 
-        <h3 class="member-all">音楽会</h3>                
-        <p class="member-name">細見 貴聡　　古松 昂樹</p>            
+        <p class="home_day">9.22 SUN</p>
+        <p class="home_time">9:00~15:00</p>
 
-        <h3 class="member-all">内規</h3>
-        <p class="member-name">永田 一真　　行平 大悟</p>
+        <div id="yesterday">
+            <!-- <p class="home_countdown">開催まで</p> -->
+            <p class = "home_hour"></p>
+        </div>
+        <div id="theday">
+            <p class="kaisai">開催中！</p>
 
-        <h3 class="member-all">予算/会計</h3>
-        <p class="member-name">松井 宏道</p>
+            <div class="home__theday">
+                <div class="home__theday__timetable"><a href="{% url 'timetable'%}" class="home__theday__timetable_link">タイムテーブルはこちら</a></div>
+                <div class="home__theday__ranking"><a href="{% url 'ranking'%}" class="home__theday__ranking_link">レースゲームのランキングはこちら</a></div>
+                <div class="home__theday__game">脱出ゲーム2-A,2-Bで予約受付中！</div>
 
-        <h3 class="member-all">備品管理</h3>            
-        <p class="member-name">小松 冬弥</p>
+            </div>
+            
 
-        <h3 class="member-all">黒本</h3>
-        <p class="member-name">玉置 健一</p>
+        </div>
+        <div class="attention">
+            <div>
+                <h6 class="title">金券</h6>
+                <p>金券は1枚50円です。</p>
+                <p>今年度から<span>auPay</span>をご利用いただけます。</p>
+                <p>金券販売所が混雑する場合があるため、auPayのご利用をご検討ください。</p>
+            </div>
+    
+            <div>
+                <h6 class="title">お手洗い</h6>
+                <p>男性用お手洗い<br>
+                    特別教室棟の2階の西側、4階の西側および教室棟3階にございます。
+                </p>
+                <p>女性用お手洗い<br>
+                    特別教室棟の2階の東側、3階、4階の東側、教室棟の2階、4階にございます。
+                </p>
+            </div>
+    
+            <div>
+                <h6>そのほか<h6/>
+                <p>校内は<strong>全面禁煙</strong>です。</p>
+                <p>校舎や講堂に入る際には、<strong>上履き</strong>をご着用ください。</p>
+            </div>
+        </div>
+    </div>
 
-        <h3 class="member-all">印刷</h3>
-        <p class="member-name">小田 蒼海　　横内 悌央　　森 敬二朗</p>
 
-        <h3 class="member-all">パンフレット</h3>
-        <p class="member-name">安積 義慶</p>
-
-        <h3 class="member-all">受付</h3>    
-        <p class="member-name">中島 優</p>
-
-        <h3 class="member-all">金券</h3>
-        <p class="member-name">橘 優太</p>
-
-        <h3 class="member-all">広報</h3>
-        <p class="member-name">鏑木 陽斗</p>
-
-        <h3 class="member-all">運動場企画</h3>
-        <p class="member-name">飯田 晄生</p>
-
-        <h3 class="member-all">中央ステージ</h3>
-        <p class="member-name">椿 和壱</p>
-
-        <h3 class="member-all">縁日</h3>
-        <p class="member-name">松井 宏道　　鏑木 陽斗</p><p class="member-name">榎本 篤行　　法貴 徹真</p>
-
-        <h3 class="member-all">クイズ</h3>
-        <p class="member-name">谷本 有</p>
-
-        <h3 class="member-all">テーブルゲーム</h3>                
-        <p class="member-name">中畠 啓介</p>
-
-        <h3 class="member-all">脱出ゲーム</h3>
-        <p class="member-name">長谷部 佑真　　橋本 賢人</p>
-
-        <h3 class="member-all">ピタゴラスイッチ</h3>                
-        <p class="member-name">廣澤 裕汰　　今岡 悠悟</p>
-
-        <h3 class="member-all">糸電話</h3>                
-        <p class="member-name">法貴 徹真</p>
-
-        <h3 class="member-all">高校入試</h3>
-        <p class="member-name">松井 宏道　　楊 尭仁　　中島 優</p>
-
-        <h3 class="member-all">喫茶</h3>
-        <p class="member-name">横松 輝大　　江原 輝彦　　吉川 泰平</p>
-
-        <h3 class="member-all">屋台</h3>
-        <p class="member-name">菱谷 旺雅　　北川 悠貴　　<p class="member-name">原 大輔　　今岡 悠悟</p>
-
-        <h3 class="member-all">校内装飾</h3>                
-        <p class="member-name">鏑木 陽斗　　高橋 悠　　松井 宏道</p><p class="member-name">安積 義慶　　永田 一真</p>
-
-        <h3 class="member-all">モニュメント</h3>
-        <p class="member-name">榎本 篤行</p>
-
-        <h3 class="member-all">案内</h3>                
-        <p class="member-name">行平 大悟　　檜垣 慶　　永田 一真</p><p class="member-name">玉置 健一　　法貴 徹真</p>
-
-        <h3 class="member-all">デザイン</h3>
-        <p class="member-name">岡野 陸大　　浅田 遼</p>
-    </div> -->
-</div>
 {% endblock %}
 
 
 {% block extra_js %}
     <script src="{% static 'main/javascript/countdown.js' %}"></script>
-    <script src="{% static 'main/javascript/password.js' %}"></script>
     <script>
         $(function() {
         $("#header").load("header.html");

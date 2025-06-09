@@ -1,7 +1,9 @@
 .circle {
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-left: 30px;
     &_name {
         font-size: 30px;
+        font-weight: 600;
         margin-bottom: 40px;
     }
     &__image {
@@ -11,10 +13,26 @@
         margin-bottom: 50px;
     }
     &_location {
-        font-size: 20px;
         margin-bottom: 30px;
+        font-size: 16px;
+        font-weight: 550;
     }
     &_introduction {
-        font-size: 20px;
+        font-size: 17px;
+        width: 80vw;
+        line-height: 2;
     }
+    .fa-location-dot {
+        margin-right: 5px;
+    }
+}
+@media screen and (min-width: 900px) {
+    .circle {
+        &__image {
+            &_logo {
+                width: 360px;
+            }
+        }
+    }
+
 }

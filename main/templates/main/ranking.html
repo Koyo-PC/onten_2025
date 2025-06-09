@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}      
+{% load static %}
+
+{% block title %}
+2024年度 甲陽学院高等学校 音楽と展覧の会 RANKING
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/ranking.css' %}">
+{% endblock %}
+
+
+{% block contents %}
+
+<h2>レーシングゲーム</h2>
+<h2>ランキング</h2>
+    <div class="ranking">
+        {% for ranking in rankings %}
+            <div class="ranking__content">
+                <p class="ranking__content_name">{{ ranking.name }}</p>
+
+
+                <p class="ranking__content_time">{{ ranking.time }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}   

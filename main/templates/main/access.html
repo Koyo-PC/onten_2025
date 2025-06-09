@@ -2,19 +2,33 @@
 {% load static %}
 
 {% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 アクセス
+2024年度 甲陽学院高等学校 音楽と展覧の会 ACCESS
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'main/css/base.css'%}">
     <link rel="stylesheet" href="{% static 'main/css/access.css' %}">
 {% endblock %}
 
 
 {% block contents %}
-    <div>
-        coming soon
+    <h2>ACCESS</h2>
+    <div class="access">
+        <p class="access_time">
+            阪急電車「甲陽園」駅から徒歩約25分<br>
+            阪急/阪神バス「柏堂町」停留所から南へ徒歩約5分<br>
+            阪急バス「苦楽園口」停留所から徒歩約15分
+        </p>
+        <div class="access_map">
+            <iframe class="access_map_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1378.1540330742152!2d135.3178491202959!3d34.76009754215458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f36ab1b8e56b%3A0x41b0ac08629de653!2z55Sy6Zm95a2m6Zmi6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1721999682141!5m2!1sja!2sjp"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="access_attention">車でのご来校に関してのご注意</p>
+        <p class="access_txt">
+            送迎を含む校内への車の乗り入れは全面禁止となっています。<br>
+            学校周辺はすべて駐車禁止ですので、ご来校には公共交通機関をご利用ください。<br>
+            例年、北山緑化植物園より「植物園の利用者が駐車できない」との苦情が寄せられております。植物園への駐車もご遠慮ください。
+        </p>
     </div>
+    
 {% endblock %}
 
 

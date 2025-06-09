@@ -1,106 +1,168 @@
 main {
     margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
-.index{
-    &-top{
-        text-align: center;
-        margin-bottom: 100px;
-        &-title{
-            font-size: 2rem;
-        }
-        &-img{
-            width: 50vw;
-            margin-bottom: 50px;
-        }
-        &-data{
-            font-size: 4rem;
-        }
-    }
-    &-countdown{
-        &-box{
-            text-align: center;
-            margin-bottom: 100px;
-        }
-        &-content{
-            font-size: 4rem;
-            color:#e95295
-        }
-        &-title{
-            font-size: 2rem;
-        }
-    }
-    &-message{
-        margin-bottom: 100px;
-        
-        &-content{
-
-            margin-left: 5%;
-            font-size: 18px;
-            font-stretch: expanded;
-            text-align: left;
-            line-height: 2;
-        }
-        &-name{
-            font-size: 1.2rem;
-            margin: 5px;
-            text-align: right;
-            margin-bottom: 40px;
-            margin-right: 5%;
-        }
+.image {
+    display: flex;
+    justify-content: center;  /* 親要素内で水平方向に中央揃え */
+    width: 100%;              /* 親要素の幅を100%に */
+    height: auto;             /* 高さを自動調整 */
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    img {
+        width: 100%;          /* 画像の幅を親要素いっぱいに */
+        max-width: 50vw;      /* 最大でディスプレイ幅の60%まで */
+        height: auto;         /* 画像の縦横比を保持 */
+        object-fit: contain;  /* 画像がはみ出さないように調整 */
     }
 }
+.home {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &_num {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &_koyo {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    &_onten {
+        font-size: 35px;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+    &_day {
+        font-size: 70px;
+        font-weight: 700;
+    }
+    &_time {
+        font-size: 45px;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+    &_countdown {
+        font-size: 25px;
+        font-weight: 500;
+    }
+    &_hour {
+        font-size: 55px;
+        font-weight: 600;
+    }
+    #theday {
+        display: none;
+    }
+    #toujitsu {
+        display: block;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // margin-top: 30px;
+    }
+    #yesterday {
+        display: block;
+    }
+    #zenjitu {
+        display: none;
+    }
+    .kaisai {
+        font-size: 50px;
+        font-weight: 600;
+    }
+    &__theday {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
 
+        &__timetable {
+            width: 180px;
+            height: 180px;
+            color: white;
+            border-radius: 50%;
+            background-color: #fb0008;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        &__ranking {
+            width: 180px;
+            height: 180px;
+            color: black;
+            border-radius: 50%;
+            background-color: #fff000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        &__game {
+            width: 180px;
+            height: 180px;
+            color: black;
+            border-radius: 50%;
+            background-color: #00d61f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        &__pc {
+            width: 180px;
+            height: 180px;
+            color: black;
+            border-radius: 50%;
+            background-color: #05aafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+    }
+}
 
 @media screen and (max-width: 480px) {
     #load-img{
         &-pc{display: none;}
         &-phone{display: block;}
     }
-    .index{
-        &-top{
-            &-img{
-                width: 60%;
-            }
-            &-title{
-                font-size:2rem;
-            }
+
+}
+.attention {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.7;
+    text-align: start;
+    div {
+        width: 80vw;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        h6 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 30px;
         }
-        &-countdown{
-            &-content{
-                font-size: 4rem;
-            }
-            &-data{
-                font-size: 4rem;
-            }
-            &-title{
-                font-size: 1.5rem;
-            }
+        & span {
+            color: rgb(190, 123, 0);
+            font-weight: 600;
         }
-        &-message{
-            width: 80vw;
-            margin-bottom: 30px;
-            &-title{
-                font-size: 2rem;
-            }
-            &-content{
-                font-size: 0.9rem;
-            }
-            &-name{
-                font-size: 0.9rem;
-            }
+        & p {
+            font-size: 16px;
+            font-weight: 400;
         }
     }
 }
-.member{
-    width: 80%;
-    &-all{
-        margin-top: 20px;
-        font-size:20px;
-        margin-left: 5%;
-    }
-    &-name{
-        font-size: 15px;
-        margin-top: 7px;
-        margin-left: 5%;
-    }
-}
+

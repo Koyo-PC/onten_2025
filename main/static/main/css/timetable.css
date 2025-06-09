@@ -1,1 +1,239 @@
-/*# sourceMappingURL=timetable.css.map */
+@charset "UTF-8";
+main {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 50px 170px 170px 170px 170px;
+  grid-template-rows: 40px 30px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-areas: "nine stage auditorium physics audiovisual merger";
+  overflow-x: scroll;
+}
+.timetable__place {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0; /* 上部に固定 */
+  z-index: 6; /* 他の要素より前に表示 */
+}
+.timetable__place_txt {
+  font-size: 15px;
+}
+.timetable__time_txt {
+  font-size: 16px;
+}
+.timetable__sticky {
+  position: sticky;
+  left: 0; /* 横スクロールに対して固定 */
+  z-index: 6; /* 他の要素の上に表示されるようにする */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.timetable__back {
+  background-color: rgba(64, 137, 200, 0.115);
+}
+.timetable .timetable__event_time {
+  position: relative;
+  top: 0%;
+}
+.timetable__event {
+  text-align: center;
+}
+.timetable__event_time {
+  font-size: 13px;
+  font-weight: 600;
+}
+.timetable__event_name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.timetable__stage {
+  background-color: rgba(255, 0, 13, 0.737254902);
+  grid-column: 2;
+}
+.timetable__auditorium {
+  grid-column: 3;
+  background-color: rgba(254, 241, 0, 0.737254902);
+}
+.timetable__merger {
+  background-color: rgba(5, 213, 34, 0.737254902);
+  grid-column: 4;
+}
+.timetable__physics {
+  grid-column: 5;
+  background-color: rgba(1, 171, 253, 0.737254902);
+}
+.timetable #stage {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: rgba(255, 0, 12, 0.8117647059);
+}
+.timetable #auditorium {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: rgba(254, 241, 0, 0.8117647059);
+}
+.timetable #merger {
+  grid-column: 4;
+  grid-row: 1;
+  background-color: rgba(5, 213, 34, 0.8117647059);
+}
+.timetable #physics {
+  grid-column: 5;
+  grid-row: 1;
+  background-color: rgba(1, 171, 253, 0.8117647059);
+}
+.timetable #space {
+  grid-row: 2;
+}
+.timetable #fix-x {
+  grid-column: 1/7;
+  grid-row: 1;
+}
+.timetable #nine {
+  grid-column: 1;
+  grid-row: 3;
+}
+.timetable #nine-thirty {
+  grid-column: 1;
+  grid-row: 4;
+}
+.timetable #ten {
+  grid-column: 1;
+  grid-row: 5;
+}
+.timetable #ten-thirty {
+  grid-column: 1;
+  grid-row: 6;
+}
+.timetable #eleven {
+  grid-column: 1;
+  grid-row: 7;
+}
+.timetable #eleven-thirty {
+  grid-column: 1;
+  grid-row: 8;
+}
+.timetable #twelve {
+  grid-column: 1;
+  grid-row: 9;
+}
+.timetable #twelve-thirty {
+  grid-column: 1;
+  grid-row: 10;
+}
+.timetable #thirteen {
+  grid-column: 1;
+  grid-row: 11;
+}
+.timetable #thirteen-thirty {
+  grid-column: 1;
+  grid-row: 12;
+}
+.timetable #fourteen {
+  grid-column: 1;
+  grid-row: 13;
+}
+.timetable #fourteen-thirty {
+  grid-column: 1;
+  grid-row: 14;
+}
+.timetable #fifteen {
+  grid-column: 1;
+  grid-row: 15;
+}
+.timetable #fifteen-thirty {
+  grid-column: 1;
+  grid-row: 16;
+}
+.timetable #time-back {
+  grid-column: 2/6;
+  grid-row: 3/17;
+}
+.timetable #margin {
+  grid-column: 1;
+  grid-row: 1;
+}
+.timetable #keion {
+  grid-row: 8/9;
+  margin-bottom: 33px;
+}
+.timetable #quiz {
+  grid-row: 9/11;
+}
+.timetable #sung {
+  grid-row: 12/13;
+  margin-bottom: 66px;
+}
+.timetable #sung p {
+  font-size: 9px;
+}
+.timetable #mis {
+  grid-row: 13/14;
+  margin-top: -65px;
+  margin-bottom: 50px;
+}
+.timetable #dance {
+  grid-row: 14/15;
+  margin-top: 8px;
+}
+.timetable #dance p {
+  font-size: 10px;
+}
+.timetable #mixed-1 {
+  grid-row: 4/5;
+  margin-top: -33px;
+  margin-bottom: 55px;
+}
+.timetable #mixed-2 {
+  grid-row: 5/6;
+  margin-top: -48px;
+  margin-bottom: 50px;
+}
+.timetable #mixed-3 {
+  grid-row: 6/7;
+  margin-top: -33px;
+  margin-bottom: 15px;
+}
+.timetable #glee {
+  grid-row: 7/8;
+  margin-bottom: 33px;
+}
+.timetable #ensemble-auditorium {
+  grid-row: 8/9;
+  margin-bottom: 33px;
+}
+.timetable #award {
+  grid-row: 9/10;
+  margin-top: -33px;
+  margin-bottom: 50px;
+}
+.timetable #individual {
+  grid-row: 10/12;
+  margin-top: -50px;
+}
+.timetable #ensemble-merger-1 {
+  grid-row: 11/12;
+}
+.timetable #ensemble-merger-1 p {
+  font-size: 9px;
+}
+.timetable #ensemble-merger-2 {
+  grid-row: 13/14;
+  margin-top: 9px;
+  margin-bottom: -50px;
+}
+.timetable #pc-build-1 {
+  grid-row: 6/7;
+}
+.timetable #tas {
+  grid-row: 8/9;
+}
+.timetable #hack {
+  grid-row: 7/8;
+}
+.timetable #pc-build-2 {
+  grid-row: 11/12;
+}/*# sourceMappingURL=timetable.css.map */

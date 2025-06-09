@@ -7,7 +7,13 @@ body {
 }
 
 html {
-  background-image: url(../images/white_00080.jpg);
+  background-image: url(../images/back.jpg);
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
 }
 
 #load-img-pc {
@@ -30,32 +36,35 @@ html {
   height: 100%;
   background-color: black;
   transition: opacity 3s;
+  transition: opacity 3s ease-out;
 }
 
 .footer {
   background-color: #2e2930;
-  height: 150px;
   color: #f3f2f2;
   margin-bottom: 0;
   text-align: center;
   padding-top: 30px;
   position: relative;
-  height: 150px;
+  height: 170px;
   margin-top: 200px;
+}
+.footer_icon {
+  margin: 0 10px;
+}
+.footer_txt {
+  align-items: center;
+  margin-top: 50px;
 }
 
 main {
   margin-top: 100px;
   margin-bottom: 10px;
-  margin-left: 150px;
-  margin-right: 150px;
 }
 
 @media screen and (max-width: 648px) {
   main {
     margin-top: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
   }
   #header {
     height: 40px;
@@ -63,10 +72,11 @@ main {
   }
 }
 h2 {
-  align-items: center;
-  border-bottom: solid 2px rgb(82, 88, 187);
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
   margin-bottom: 50px;
+  margin-left: 30px;
 }
 
 .header {
@@ -163,6 +173,7 @@ h2 {
 #sp__bg.active {
   opacity: 1;
   visibility: visible;
+  z-index: 9;
 }
 
 .nav {

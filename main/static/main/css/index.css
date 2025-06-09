@@ -1,48 +1,131 @@
+@charset "UTF-8";
 main {
   margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.index-top {
+.image {
+  display: flex;
+  justify-content: center; /* 親要素内で水平方向に中央揃え */
+  width: 100%; /* 親要素の幅を100%に */
+  height: auto; /* 高さを自動調整 */
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image img {
+  width: 100%; /* 画像の幅を親要素いっぱいに */
+  max-width: 50vw; /* 最大でディスプレイ幅の60%まで */
+  height: auto; /* 画像の縦横比を保持 */
+  -o-object-fit: contain;
+     object-fit: contain; /* 画像がはみ出さないように調整 */
+}
+
+.home {
   text-align: center;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.index-top-title {
-  font-size: 2rem;
+.home_num {
+  font-size: 20px;
+  font-weight: 600;
 }
-.index-top-img {
-  width: 50vw;
+.home_koyo {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.home_onten {
+  font-size: 35px;
+  font-weight: 500;
   margin-bottom: 50px;
 }
-.index-top-data {
-  font-size: 4rem;
+.home_day {
+  font-size: 70px;
+  font-weight: 700;
 }
-.index-countdown-box {
-  text-align: center;
-  margin-bottom: 100px;
+.home_time {
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
-.index-countdown-content {
-  font-size: 4rem;
-  color: #e95295;
+.home_countdown {
+  font-size: 25px;
+  font-weight: 500;
 }
-.index-countdown-title {
-  font-size: 2rem;
+.home_hour {
+  font-size: 55px;
+  font-weight: 600;
 }
-.index-message {
-  margin-bottom: 100px;
+.home #theday {
+  display: none;
 }
-.index-message-content {
-  margin-left: 5%;
-  font-size: 18px;
-  font-stretch: expanded;
-  text-align: left;
-  line-height: 2;
+.home #toujitsu {
+  display: block;
 }
-.index-message-name {
-  font-size: 1.2rem;
-  margin: 5px;
-  text-align: right;
-  margin-bottom: 40px;
-  margin-right: 5%;
+.home #yesterday {
+  display: block;
+}
+.home #zenjitu {
+  display: none;
+}
+.home .kaisai {
+  font-size: 50px;
+  font-weight: 600;
+}
+.home__theday {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.home__theday__timetable {
+  width: 180px;
+  height: 180px;
+  color: white;
+  border-radius: 50%;
+  background-color: #fb0008;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.home__theday__ranking {
+  width: 180px;
+  height: 180px;
+  color: black;
+  border-radius: 50%;
+  background-color: #fff000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.home__theday__game {
+  width: 180px;
+  height: 180px;
+  color: black;
+  border-radius: 50%;
+  background-color: #00d61f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.home__theday__pc {
+  width: 180px;
+  height: 180px;
+  color: black;
+  border-radius: 50%;
+  background-color: #05aafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 480px) {
@@ -52,45 +135,31 @@ main {
   #load-img-phone {
     display: block;
   }
-  .index-top-img {
-    width: 60%;
-  }
-  .index-top-title {
-    font-size: 2rem;
-  }
-  .index-countdown-content {
-    font-size: 4rem;
-  }
-  .index-countdown-data {
-    font-size: 4rem;
-  }
-  .index-countdown-title {
-    font-size: 1.5rem;
-  }
-  .index-message {
-    width: 80vw;
-    margin-bottom: 30px;
-  }
-  .index-message-title {
-    font-size: 2rem;
-  }
-  .index-message-content {
-    font-size: 0.9rem;
-  }
-  .index-message-name {
-    font-size: 0.9rem;
-  }
 }
-.member {
-  width: 80%;
+.attention {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.7;
+  text-align: start;
 }
-.member-all {
-  margin-top: 20px;
+.attention div {
+  width: 80vw;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.attention div h6 {
   font-size: 20px;
-  margin-left: 5%;
+  font-weight: 600;
+  margin-top: 30px;
 }
-.member-name {
-  font-size: 15px;
-  margin-top: 7px;
-  margin-left: 5%;
+.attention div span {
+  color: rgb(190, 123, 0);
+  font-weight: 600;
+}
+.attention div p {
+  font-size: 16px;
+  font-weight: 400;
 }/*# sourceMappingURL=index.css.map */
