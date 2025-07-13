@@ -23,3 +23,13 @@ class Ranking(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse()
+
+class News(models.Model):
+    title = models.CharField(verbose_name="タイトル", max_length=30)
+    order = models.FloatField(verbose_name="優先順位", default=0)
+    text = models.CharField(max_length=1000, verbose_name="テキスト")
+
+    def __str__(self):
+        return self.name
+    def get_absolute_url(self):
+        return reverse()
