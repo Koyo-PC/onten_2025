@@ -12,9 +12,6 @@
         <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
 
         <link rel="icon" type="image/onten-icon" href="{% static 'main/images/favicon.png' %}"> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
         
         
         {% block head %}{% endblock %}
@@ -39,8 +36,6 @@
                     <a class="nav_link" href="{% url 'circles'%}">CIRCLES</a>
                     <a class="nav_link" href="{% url 'timetable'%}">TIME TABLE</a>
                     <a class="nav_link" href="{% url 'map'%}">MAP</a>
-                    <a class="nav_link" href="{% url 'access'%}">ACCESS</a>
-                    <a class="nav_link" href="{% url 'aboutus'%}">ABOUT US</a>
                     
                 </ul>
             </div> 

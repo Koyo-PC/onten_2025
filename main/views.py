@@ -5,7 +5,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from .models import Circle, Ranking
+from .models import Circle, News
 from .forms import (
     CirclesSearchForm,
 )
@@ -14,8 +14,8 @@ from .forms import (
 class IndexView(TemplateView):
     template_name = "main/index.html"
 
-class AccessView(TemplateView):
-    template_name = "main/access.html"
+# class AccessView(TemplateView):
+#     template_name = "main/access.html"
 
 class MapView(TemplateView):
     template_name = "main/map.html"
@@ -23,11 +23,11 @@ class MapView(TemplateView):
 class TimeTableView(TemplateView):
     template_name = "main/timetable.html"
 
-class AboutUsView(TemplateView):
-    template_name = "main/greetings.html"
+# class AboutUsView(TemplateView):
+#     template_name = "main/greetings.html"
 
-class MathView(TemplateView):
-    template_name = "main/math.html"
+# class MathView(TemplateView):
+#     template_name = "main/math.html"
     
 class CirclesView(ListView):
     template_name = "main/circles.html"
@@ -65,12 +65,25 @@ class CirclesDetailView(DetailView):
 
         return context
     
-class RankingView(ListView):
-    template_name = "main/ranking.html"
-    model = Ranking
-    context_object_name = "rankings"
+# class RankingView(ListView):
+#     template_name = "main/ranking.html"
+#     model = Ranking
+#     context_object_name = "rankings"
+
+#     def get_queryset(self):
+#         ranking = super().get_queryset().order_by('time')[0:10]
+#         return ranking
+    
+class NewsView(ListView):
+    template_name = "main/news.html"
+    model = News
+    context_object_name = "news"
 
     def get_queryset(self):
-        ranking = super().get_queryset().order_by('time')[0:10]
-        return ranking
-    
+        circles = super().get_queryset().order_by('order')
+        return circles
+
+class NewsDetailView(DetailView):
+    template_name = "main/news_detail.html"
+    model = News
+    context_object_name = "news" 
