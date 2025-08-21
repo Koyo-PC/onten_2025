@@ -10,48 +10,30 @@
 
         <link rel="stylesheet" href="{% static 'main/css/destyle.css'%}">
         <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+        <link rel="icon" href="{% static 'main/images/logo/favicon.png' %}"> 
 
-        <link rel="icon" type="image/onten-icon" href="{% static 'main/images/favicon.png' %}"> 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-        
-        
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">        
         {% block head %}{% endblock %}
 
     </head>
 
     <body id="mask">
-        <header class="header"> 
-            <button id="menu-toggle" class="header__hamburger">
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
+        <header class="header">
+            <!-- <img class="header_img" src="{% static 'main/images/logo/onten-logo.png' %}"> -->
+            <nav class="header__nav">
+                <a class="header__nav_link" href="{% url 'home' %}" >Home</a>
+                <a class="header__nav_link" href="{% url 'circles' %}" >Circles</a>
+                <a class="header__nav_link" href="{% url 'map' %}" >Map</a>
+                <a class="header__nav_link" href="{% url 'timetable' %}" >Timetable</a>
+                <!-- <a class="header__nav_link" href="{% url 'home' %}" >News</a> -->
+                <a class="header__nav_link" href="{% url 'concert' %}" >Concert</a>
+            </nav>
+            
 
-            <div id="sp__bg">
-                <ul class="nav">
-                    <a class="nav_link" href="{% url 'home' %}">HOME</a>
-                    <a class="nav_link" href="{% url 'circles'%}">CIRCLES</a>
-                    <a class="nav_link" href="{% url 'timetable'%}">TIME TABLE</a>
-                    <a class="nav_link" href="{% url 'map'%}">MAP</a>
-                    <a class="nav_link" href="{% url 'access'%}">ACCESS</a>
-                    <a class="nav_link" href="{% url 'aboutus'%}">ABOUT US</a>
-                    
-                </ul>
-            </div> 
         </header>
 
-        <!-- <div id = "load-img-pc">
-            <video autoplay muted playsinline src="{% static 'main/images/0001-0160.mp4' %}" width="100%"height="100%"></video>
-        </div>
-        <div id = "load-img-phone">
-            <video autoplay muted playsinline src="{% static 'main/images/for_phone0001-0160.mp4' %}" width="100%"height="100%"></video>
-        </div> -->
 
         <main>
             {% block contents %}{% endblock %}
@@ -60,24 +42,30 @@
 
 
         <footer class="footer">
-            <a href="https://twitter.com/koyo_onten" aria-label="twitter" target="_blank" rel="noopener noreferrer" class="footer_icon">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="inline-block mx-2" style="color:white" height="35px" width="35px" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
-                </svg>
-            </a>
-            <a href="https://instagram.com/koyo_onten" aria-label="instagram" target="_blank" rel="noopener noreferrer" class="footer_icon">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="inline-block mx-2" style="color:white" height="35px" width="35px" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                </svg>
-            </a>
-            <div class="footer__content">
-                
+
+            <div class="footer__logo">
+                <img class="footer__logo_img" src="{% static 'main/images/logo/footer.png' %}" >
+                <p class="footer__logo_title">78TH KOYO ONTEN 2025</p>
             </div>
-            
-            
-            <p class="footer_txt">第77回
-                甲陽学院高等学校
-                音楽と展覧の会</p>
+
+            <div class="footer__link">
+
+                <div class="footer__link__box">
+                    <p class="footer__link__box_txt">音楽と展覧の会</p>
+
+                    <a href="https://x.com/koyo_onten" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/koyo_onten" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <div class="footer__link__box">
+                    <p class="footer__link__box_txt">PC同好会</p>
+
+                    <a href="https://x.com/koyo_pc" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+            </div>
+
         </footer>
 
         <script src="{% static 'main/javascript/base.js' %}"></script>

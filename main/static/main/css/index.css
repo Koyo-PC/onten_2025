@@ -1,165 +1,154 @@
-@charset "UTF-8";
-main {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: start;
+  margin-top: 20px;
+  margin-left: 20vw;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: rgb(237, 235, 235);
 }
 
-.image {
+@media screen and (max-width: 540px) {
+  h1 {
+    margin-left: 30px;
+  }
+}
+.onten {
   display: flex;
-  justify-content: center; /* 親要素内で水平方向に中央揃え */
-  width: 100%; /* 親要素の幅を100%に */
-  height: auto; /* 高さを自動調整 */
-  margin-top: 0;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
-.image img {
-  width: 100%; /* 画像の幅を親要素いっぱいに */
-  max-width: 50vw; /* 最大でディスプレイ幅の60%まで */
-  height: auto; /* 画像の縦横比を保持 */
-  -o-object-fit: contain;
-     object-fit: contain; /* 画像がはみ出さないように調整 */
+.onten_logo {
+  width: 500px;
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
 }
-
-.home {
-  text-align: center;
+.onten__datetime {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
-.home_num {
-  font-size: 20px;
-  font-weight: 600;
-}
-.home_koyo {
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-.home_onten {
-  font-size: 35px;
+.onten__datetime_title {
+  font-size: 100px;
+  font-family: Shippori Mincho;
   font-weight: 500;
-  margin-bottom: 50px;
+  color: rgb(237, 235, 235);
 }
-.home_day {
-  font-size: 70px;
-  font-weight: 700;
-}
-.home_time {
-  font-size: 45px;
-  font-weight: 600;
-  margin-bottom: 50px;
-}
-.home_countdown {
-  font-size: 25px;
-  font-weight: 500;
-}
-.home_hour {
-  font-size: 55px;
+.onten__datetime_day {
+  margin-top: 10px;
+  font-size: 40px;
   font-weight: 600;
 }
-.home #theday {
-  display: none;
+
+@media screen and (max-width: 722px) {
+  .onten {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .onten_logo {
+    width: 80vw;
+  }
+  .onten__datetime {
+    margin-top: -85px;
+  }
 }
-.home #toujitsu {
-  display: block;
+.countdown {
+  margin-top: 30px;
+  margin-bottom: 110px;
 }
-.home #yesterday {
-  display: block;
-}
-.home #zenjitu {
-  display: none;
-}
-.home .kaisai {
+.countdown_cd {
+  text-align: center;
   font-size: 50px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
-.home__theday {
+.countdown__dhms {
   display: flex;
-  margin-top: 30px;
-  justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
-}
-.home__theday__timetable {
-  width: 180px;
-  height: 180px;
-  color: white;
-  border-radius: 50%;
-  background-color: #fb0008;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-weight: 700;
-}
-.home__theday__ranking {
-  width: 180px;
-  height: 180px;
-  color: black;
-  border-radius: 50%;
-  background-color: #fff000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-.home__theday__game {
-  width: 180px;
-  height: 180px;
-  color: black;
-  border-radius: 50%;
-  background-color: #00d61f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-.home__theday__pc {
-  width: 180px;
-  height: 180px;
-  color: black;
-  border-radius: 50%;
-  background-color: #05aafe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
 }
 
-@media screen and (max-width: 480px) {
-  #load-img-pc {
-    display: none;
-  }
-  #load-img-phone {
-    display: block;
-  }
-}
-.attention {
-  margin-top: 50px;
+.circle {
+  --value: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#ffcc00 calc(var(--value) * 1%), #444 0 100%);
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column;
-  line-height: 1.7;
-  text-align: start;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
 }
-.attention div {
-  width: 80vw;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: #121212;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
-.attention div h6 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 30px;
+.circle span,
+.circle small {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
-.attention div span {
-  color: rgb(190, 123, 0);
-  font-weight: 600;
+.circle span {
+  font-size: 40px;
+  color: rgb(231, 231, 231);
 }
-.attention div p {
+.circle small {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
+  color: #ccc;
+}
+
+@media screen and (max-width: 580px) {
+  .circle {
+    width: 20vw;
+    height: 20vw;
+    margin: 8px;
+  }
+  .circle::before {
+    width: 18vw;
+    height: 18vw;
+  }
+  .circle span {
+    font-size: 25px;
+  }
+  .circle small {
+    font-size: 13px;
+  }
+}
+h5 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 15px;
+}
+.member p {
+  margin: 10px;
+}
+.member-space {
+  height: 1px;
 }/*# sourceMappingURL=index.css.map */

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 Home
+第78回 音楽と展覧の会 「燦然」 2025年度 甲陽学院高等学校 
 {% endblock %}
 
 {% block head %}
@@ -10,79 +10,134 @@
 {% endblock %}
 
 {% block contents %}
-    <div id = "load-img-pc">
-        <video autoplay muted playsinline src="{% static 'main/images/0001-0160.mp4' %}" width="100%"height="100%"></video>
-    </div>
-    <div id = "load-img-phone">
-        <video autoplay muted playsinline src="{% static 'main/images/for_phone0001-0160.mp4' %}" width="100%"height="100%"></video>
-    </div>
     
-    <div class="image">
-    <img src = "{% static 'main/images/rogo5.png' %}" class = "image_image">
+<h1>第78回<br>甲陽学院高等学校<br>音楽と展覧の会</h1>
+
+<div class="onten">
+    <div class="onten_logo">
+        
+        <div id="lottie"></div>
+        <!-- <div class="mask"></div> -->
     </div>
-    <div class="home">
-        <h3 class="home_num">第77回</h3>
-        <h1 class="home_koyo">甲陽学院高等学校</h1>
-        <h1 class="home_onten">音楽と展覧の会</h1>
+    <div class="onten__datetime">
+        <p class="onten__datetime_title">燦然</p>
+        <p class="onten__datetime_day">9.23 Fri</p>
+    </div>
+</div>
 
 
-        <p class="home_day">9.22 SUN</p>
-        <p class="home_time">9:00~15:00</p>
 
-        <div id="yesterday">
-            <!-- <p class="home_countdown">開催まで</p> -->
-            <p class = "home_hour"></p>
+<div class="countdown">
+    <h5 class="countdown_cd">CountDown</h5>
+    <div class="countdown__dhms">
+        <div class="circle day-circle" id="circle-day">
+            <span class="day">0</span>
+            <small>Days</small>
         </div>
-        <div id="theday">
-            <p class="kaisai">開催中！</p>
-
-            <div class="home__theday">
-                <div class="home__theday__timetable"><a href="{% url 'timetable'%}" class="home__theday__timetable_link">タイムテーブルはこちら</a></div>
-                <div class="home__theday__ranking"><a href="{% url 'ranking'%}" class="home__theday__ranking_link">レースゲームのランキングはこちら</a></div>
-                <div class="home__theday__game">脱出ゲーム2-A,2-Bで予約受付中！</div>
-
-            </div>
-            
-
+        <div class="circle hour-circle" id="circle-hour">
+            <span class="hour">0</span>
+            <small>Hours</small>
         </div>
-        <div class="attention">
-            <div>
-                <h6 class="title">金券</h6>
-                <p>金券は1枚50円です。</p>
-                <p>今年度から<span>auPay</span>をご利用いただけます。</p>
-                <p>金券販売所が混雑する場合があるため、auPayのご利用をご検討ください。</p>
-            </div>
-    
-            <div>
-                <h6 class="title">お手洗い</h6>
-                <p>男性用お手洗い<br>
-                    特別教室棟の2階の西側、4階の西側および教室棟3階にございます。
-                </p>
-                <p>女性用お手洗い<br>
-                    特別教室棟の2階の東側、3階、4階の東側、教室棟の2階、4階にございます。
-                </p>
-            </div>
-    
-            <div>
-                <h6>そのほか<h6/>
-                <p>校内は<strong>全面禁煙</strong>です。</p>
-                <p>校舎や講堂に入る際には、<strong>上履き</strong>をご着用ください。</p>
-            </div>
+        <div class="circle min-circle" id="circle-min">
+            <span class="min">0</span>
+            <small>Minutes</small>
+        </div>
+        <div class="circle sec-circle" id="circle-sec">
+            <span class="sec">0</span>
+            <small>Seconds</small>
         </div>
     </div>
+</div>
 
+<h5>音展委員</h5>
+<div class="member">
+
+    <div class="member__name">
+        <p>委員長</p>
+        <p>副委員長</p>
+        <div class="member-space"></div>
+        <p>音楽会</p>
+        <div class="member-space"></div>
+        <p>内規</p>
+        <p>予算・会計</p>
+        <p>備品管理</p>
+        <p>黒本</p>
+        <p>印刷</p>
+        <p>パンフレット</p>
+        <p>受付</p>
+        <p>金券</p>
+        <p>広報</p>
+        <div class="member-space"></div>
+        <p>運動場企画</p>
+        <p>中央ステージ</p>
+        <p>縁日</p>
+        <p>クイズ</p>
+        <p>テーブルゲーム</p>
+        <p>PR動画</p>
+        <p>スタンプラリー</p>
+        <p>占い</p>
+        <p>ジェットコースター</p>
+        <p>喫茶</p>
+        <p>屋台</p>
+        <div class="member-space"></div>
+        <p>校内装飾</p>
+        <p>モニュメント</p>
+        <p>案内</p>
+        <div class="member-space"></div>
+        <p>WEB制作</p>
+
+
+    </div>
+
+    <div class="member__person">
+        <p>正木俊太</p>
+        <p>木村凛　鵜川賢人　中村理人</p>
+        <div class="member-space"></div>
+        <p>花房大貴</p>
+        <div class="member-space"></div>
+        <p>福地誠之介</p>
+        <p>中村理人</p>
+        <p>上野聡太</p>
+        <p>浦田泰成</p>
+        <p>川本啓太</p>
+        <p>武田健佑</p>
+        <p>加柴平慈</p>
+        <p>井村颯</p>
+        <p>田中深森</p>
+        <div class="member-space"></div>
+        <p>城戸翼</p>
+        <p>吉井聡明</p>
+        <p>北井碧</p>
+        <p>山名雄大</p>
+        <p>越智俊介</p>
+        <p>吉井聡明</p>
+        <p>川島圭太郎</p>
+        <p>太田煌士</p>
+        <p>鵜川賢人</p>
+        <p>入江森太郎</p>
+        <p>菊川晃誠</p>
+        <div class="member-space"></div>
+        <p>木村凛</p>
+        <p>村上祐太</p>
+        <p>佐藤駿河</p>
+        <div class="member-space"></div>
+        <p>木村壮一郎　森田陽風</p>
+        <p>森賀康祐　堀寛明</p>
+
+
+    </div>
+
+</div>
 
 {% endblock %}
 
 
 {% block extra_js %}
     <script src="{% static 'main/javascript/countdown.js' %}"></script>
-    <script>
-        $(function() {
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-        });
-    </script> 
-{% endblock %}   
+    <script src="{% static 'main/javascript/animation.js' %}"></script>
+    <script src="{% static 'main/javascript/animation2.js' %}"></script>
+
+
+{% endblock %}
 
 
