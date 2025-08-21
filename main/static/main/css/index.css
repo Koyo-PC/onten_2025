@@ -9,6 +9,11 @@ h1 {
   color: rgb(237, 235, 235);
 }
 
+@media screen and (max-width: 540px) {
+  h1 {
+    margin-left: 30px;
+  }
+}
 .onten {
   display: flex;
   flex-direction: row;
@@ -39,7 +44,21 @@ h1 {
   font-weight: 600;
 }
 
+@media screen and (max-width: 722px) {
+  .onten {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .onten_logo {
+    width: 80vw;
+  }
+  .onten__datetime {
+    margin-top: -85px;
+  }
+}
 .countdown {
+  margin-top: 30px;
   margin-bottom: 110px;
 }
 .countdown_cd {
@@ -95,4 +114,41 @@ h1 {
   font-size: 16px;
   font-weight: normal;
   color: #ccc;
+}
+
+@media screen and (max-width: 580px) {
+  .circle {
+    width: 20vw;
+    height: 20vw;
+    margin: 8px;
+  }
+  .circle::before {
+    width: 18vw;
+    height: 18vw;
+  }
+  .circle span {
+    font-size: 25px;
+  }
+  .circle small {
+    font-size: 13px;
+  }
+}
+h5 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 15px;
+}
+.member p {
+  margin: 10px;
+}
+.member-space {
+  height: 1px;
 }/*# sourceMappingURL=index.css.map */

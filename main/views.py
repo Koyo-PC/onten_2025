@@ -87,3 +87,6 @@ class NewsDetailView(DetailView):
     template_name = "main/news_detail.html"
     model = News
     context_object_name = "news" 
+
+class ConcertView(TemplateView):
+    template_name = "main/concert.html"
