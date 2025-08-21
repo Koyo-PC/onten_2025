@@ -12,38 +12,7 @@
 
 
 {% block contents %}
-<h2>CIRCLES</h2>
-<div class="circles">
-    
 
-    <form method="GET" class="circles__form">
-
-        {{ form.keyword }}
-        <button type="submit" class="circles__form_submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        
-    </form>
-    <div  class="circles__container">
-        {% for circle in circles %}
-        <div class="circles__container__block">
-            <a href="{% url 'circles_detail' circle.pk %}">
-            <div class="circles__container__block__link" href="{% url 'circles_detail' circle.pk %}">
-                <div class="circles__container__block__logo">
-                    {% if circle.logo %}
-                    <img src="{{ circle.logo.url }}"  class="circles__container__block__logo_img"/>
-                    {% else %}
-                    {% endif %}
-                </div>
-                <p class="circles__container__block_name">{{ circle.name }}</p>
-            </div>
-            
-            <p class="circles__container__block_location"><span><i class="fa-solid fa-location-dot"></i></span>{{ circle.location }}</p>
-            </a>
-        </div>
-
-        {% endfor %}
-    </div>
-    
-</div>
 
 {% endblock %}
 

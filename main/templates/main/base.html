@@ -21,14 +21,14 @@
 
     <body id="mask">
         <header class="header">
-
+            <!-- <img class="header_img" src="{% static 'main/images/logo/onten-logo.png' %}"> -->
             <nav class="header__nav">
                 <a class="header__nav_link" href="{% url 'home' %}" >Home</a>
-                <a class="header__nav_link" href="{% url 'home' %}" >Circles</a>
-                <a class="header__nav_link" href="{% url 'home' %}" >Map</a>
-                <a class="header__nav_link" href="{% url 'home' %}" >Timetable</a>
+                <a class="header__nav_link" href="{% url 'circles' %}" >Circles</a>
+                <a class="header__nav_link" href="{% url 'map' %}" >Map</a>
+                <a class="header__nav_link" href="{% url 'timetable' %}" >Timetable</a>
                 <!-- <a class="header__nav_link" href="{% url 'home' %}" >News</a> -->
-                <a class="header__nav_link" href="{% url 'home' %}" >音楽会</a>
+                <a class="header__nav_link" href="{% url 'concert' %}" >Concert</a>
             </nav>
             
 
