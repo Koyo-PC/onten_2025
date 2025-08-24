@@ -127,7 +127,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-# ...
+
 try:
     from .local_settings import *
 except ImportError:
