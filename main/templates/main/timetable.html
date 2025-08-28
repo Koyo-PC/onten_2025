@@ -1,16 +1,22 @@
 {% extends "main/base.html" %}      
 {% load static %}
 
-{% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 TIMETABLE
-{% endblock %}
+{% block title %}TIMETABLE{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'main/css/timetable.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/timetable.css' %}">
 {% endblock %}
 
-
 {% block contents %}
+<div class="content">
+    <div class="text glow" aria-live="polite" aria-atomic="true">
+        <span class="word en">COMING SOON</span>
+        <span class="word jp">近日公開</span>
+    </div>
+</div>
+<p class="txt">ページの完成まで<br>もうしばらくお待ちください！</p>
+
 
 {% endblock %}
 

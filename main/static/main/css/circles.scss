@@ -1,63 +1,51 @@
-.circles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    &__form {
-        margin-top: 20px;
-        margin-bottom: 50px;
-        &_search {
-            background-color: #f2f2f2;
-            padding: 5px 10px 5px 4px;
-            text-align: start;
-        }
-        &_submit {
+:root {
+    --duration: 10s; /* 表示の切り替え周期（短く/長くしたい時は変更） */
+}
 
-            margin-left: 10px;
-        }
-    }
-    &__container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        &__block {
-            margin: 10px;
-            // border: solid 1px;
-            // border-radius: 0.5px;
-            background-color: rgba(0, 0, 255, 0.082);
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            &:hover {
-                background-color: rgba(0, 0, 255, 0.33);
-            }
-            &__link {
-                display: flex;
-                align-items: center;
-            }
-            &__logo {
-                &_img {
-                    height: 40px;
-                }
-                margin-right: 20px;
-            }
-            &_name {
-                font-size: 30px;
-                font-weight: 600;
+.text {
+    height: 50px;
+    font-weight: 800;
+    font-size: 60px;
+    text-align: center;
+    user-select: none;
+}
 
-            }
-            &_location {
-                font-size: 16px;
-                font-weight: 550;
-                margin-top: 5px;
-                .fa-location-dot {
-                    margin-right: 5px;
-                }
-            }
-        }
+/* 2つのテキストを重ねて、交互にフェード */
+.word {
+    position: absolute;
+    inset: 0;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fade-swap var(--duration) infinite;
+}
+
+.word.en { animation-delay: 0s; }
+.word.jp { animation-delay: calc(var(--duration) / 2); }
+
+@keyframes fade-swap {
+    0% { opacity: 0; }
+    30% { opacity: 1; }
+    40% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.glow {
+    filter: drop-shadow(0 0 18px rgba(255,255,255,.14));
+}
+
+.txt {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60vh;
+}
+
+.content {
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 470px) {
+    .text {
+        font-size: 10vw;
     }
 }

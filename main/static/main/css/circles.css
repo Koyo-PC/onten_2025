@@ -1,58 +1,68 @@
-.circles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@charset "UTF-8";
+:root {
+  --duration: 10s; /* 表示の切り替え周期（短く/長くしたい時は変更） */
 }
-.circles__form {
-  margin-top: 20px;
-  margin-bottom: 50px;
+
+.text {
+  height: 50px;
+  font-weight: 800;
+  font-size: 60px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.circles__form_search {
-  background-color: #f2f2f2;
-  padding: 5px 10px 5px 4px;
-  text-align: start;
+
+/* 2つのテキストを重ねて、交互にフェード */
+.word {
+  position: absolute;
+  inset: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fade-swap var(--duration) infinite;
 }
-.circles__form_submit {
-  margin-left: 10px;
+
+.word.en {
+  animation-delay: 0s;
 }
-.circles__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+.word.jp {
+  animation-delay: calc(var(--duration) / 2);
 }
-.circles__container__block {
-  margin: 10px;
-  background-color: rgba(0, 0, 255, 0.082);
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+
+@keyframes fade-swap {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-.circles__container__block:hover {
-  background-color: rgba(0, 0, 255, 0.33);
+.glow {
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.14));
 }
-.circles__container__block__link {
-  display: flex;
-  align-items: center;
+
+.txt {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 60vh;
 }
-.circles__container__block__logo {
-  margin-right: 20px;
+
+.content {
+  margin-top: 80px;
 }
-.circles__container__block__logo_img {
-  height: 40px;
-}
-.circles__container__block_name {
-  font-size: 30px;
-  font-weight: 600;
-}
-.circles__container__block_location {
-  font-size: 16px;
-  font-weight: 550;
-  margin-top: 5px;
-}
-.circles__container__block_location .fa-location-dot {
-  margin-right: 5px;
+
+@media screen and (max-width: 470px) {
+  .text {
+    font-size: 10vw;
+  }
 }/*# sourceMappingURL=circles.css.map */
