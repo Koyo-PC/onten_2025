@@ -17,6 +17,29 @@
 </div>
 <p class="txt">ページの完成まで<br>もうしばらくお待ちください！</p>
 
+<div  class="circles__container">
+    {% for circle in circles %}
+    <div class="circles__container__block">
+
+        <a class="circles__container__block__link" href="{% url 'circles_detail' circle.pk %}">
+
+            {% if circle.logo %}
+            <img src="{{ circle.logo.url }}"  class="circles__container__block__link_logo"/>
+            {% else %}
+            {% endif %}
+
+            <p class="circles__container__block__link_name">{{ circle.name}}</p>
+
+        </a>
+
+        <a href="{% url 'map' %}">
+            <p class="circles__container__block_location"><span>@</span>{{ circle.location }}</p>
+        </a>
+
+    </div>
+
+    {% endfor %}
+</div>
 
 {% endblock %}
 
