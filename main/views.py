@@ -5,7 +5,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from .models import Circle, News, Concert
+from .models import Circle, News
 from .forms import (
     CirclesSearchForm,
 )
@@ -88,7 +88,3 @@ class NewsDetailView(DetailView):
     model = News
     context_object_name = "news" 
 
-class ConcertView(TemplateView):
-    template_name = "main/concert.html"
-    model = Concert
-    context_object_name = "concert"
