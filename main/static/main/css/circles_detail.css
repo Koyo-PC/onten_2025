@@ -1,1 +1,33 @@
-/*# sourceMappingURL=circles_detail.css.map */
+@charset "UTF-8";
+.circle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.circle__image {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.circle__image_logo {
+  width: 50vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.circle_location {
+  margin-bottom: 30px;
+}
+.circle_introduction {
+  text-align: start;
+  width: 70vw;
+  overflow-wrap: break-word; /* 新しい標準的な書き方 */
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 620px) {
+  .circle__image_logo {
+    width: 300px;
+  }
+  .circle_introduction {
+    width: 600px;
+  }
+}/*# sourceMappingURL=circles_detail.css.map */

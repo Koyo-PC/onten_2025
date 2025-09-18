@@ -61,7 +61,7 @@ h1 {
 }
 .countdown {
   margin-top: 30px;
-  margin-bottom: 110px;
+  margin-bottom: 90px;
 }
 .countdown_cd {
   text-align: center;
@@ -135,13 +135,6 @@ h1 {
     font-size: 13px;
   }
 }
-h5 {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
 .member {
   display: flex;
   justify-content: center;
@@ -154,4 +147,73 @@ h5 {
 }
 .member tbody + tbody {
   border-top: 10px solid transparent; /* 疑似的な margin */
+}
+
+.access {
+  line-height: 1.7;
+  margin-bottom: 80px;
+}
+.access__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.access__top__map {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.access__top__map_iframe {
+  height: 180px;
+  width: 300px;
+}
+.access__top__map_time {
+  font-size: 16px;
+  text-align: center;
+  margin-left: 10px;
+}
+.access__top__app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.access__top__app_button {
+  margin-top: 5px;
+  border-radius: 5px;
+  height: 30px;
+  border: solid gray 1px;
+  text-align: center;
+  width: 260px;
+}
+.access__attention {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.access__attention_t {
+  font-size: 19px;
+  color: red;
+  font-weight: 600;
+  text-align: center;
+}
+.access__attention_txt {
+  font-size: 16px;
+  text-align: center;
+  width: 70vw;
+}
+
+@media screen and (max-width: 680px) {
+  .access__top__map {
+    flex-direction: column;
+  }
+  .access__top__map_iframe {
+    width: 70vw;
+    height: 50vw;
+  }
+  .access__top__map_time {
+    margin-top: 20px;
+  }
 }/*# sourceMappingURL=index.css.map */
