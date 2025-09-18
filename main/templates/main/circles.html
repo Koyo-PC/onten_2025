@@ -1,18 +1,47 @@
 {% extends "main/base.html" %}      
 {% load static %}
 
-{% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 CIRCLES
-{% endblock %}
+{% block title %}CIRCLES{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 {% endblock %}
 
 
 {% block contents %}
+<div class="content">
+    <div class="text glow" aria-live="polite" aria-atomic="true">
+        <span class="word en">COMING SOON</span>
+        <span class="word jp">近日公開</span>
+    </div>
+</div>
+<p class="txt">ページの完成まで<br>もうしばらくお待ちください！</p>
 
+<div  class="circles__container">
+    {% for circle in circles %}
+    
+    <div class="circles__container__block">
+
+        <a class="circles__container__block__link" href="{% url 'circles_detail' circle.pk %}">
+
+            {% if circle.logo %}
+            <img src="{{ circle.logo.url }}"  class="circles__container__block__link_logo"/>
+            {% else %}
+            {% endif %}
+
+            <p class="circles__container__block__link_name">{{ circle.name}}</p>
+
+        </a>
+
+        <a href="{% url 'map' %}">
+            <p class="circles__container__block_location"><span>@</span>{{ circle.location }}</p>
+        </a>
+
+    </div>
+
+    
+    {% endfor %}
+</div>
 
 {% endblock %}
 

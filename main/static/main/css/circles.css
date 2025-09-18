@@ -1,58 +1,171 @@
-.circles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@charset "UTF-8";
+:root {
+  --duration: 10s; /* 表示の切り替え周期（短く/長くしたい時は変更） */
 }
-.circles__form {
-  margin-top: 20px;
-  margin-bottom: 50px;
+
+.text {
+  height: 50px;
+  font-weight: 800;
+  font-size: 60px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.circles__form_search {
-  background-color: #f2f2f2;
-  padding: 5px 10px 5px 4px;
-  text-align: start;
+
+/* 2つのテキストを重ねて、交互にフェード */
+.word {
+  position: absolute;
+  inset: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fade-swap var(--duration) infinite;
 }
-.circles__form_submit {
-  margin-left: 10px;
+
+.word.en {
+  animation-delay: 0s;
 }
+
+.word.jp {
+  animation-delay: calc(var(--duration) / 2);
+}
+
+@keyframes fade-swap {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.glow {
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.14));
+}
+
+.txt {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 60vh;
+}
+
+.content {
+  position: relative;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 470px) {
+  .text {
+    font-size: 40px;
+  }
+}
+/* --- コンテナ --- */
 .circles__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
+
+/* --- 各ブロック --- */
 .circles__container__block {
-  margin: 10px;
-  background-color: rgba(0, 0, 255, 0.082);
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
 }
+
 .circles__container__block:hover {
-  background-color: rgba(0, 0, 255, 0.33);
+  transform: translateY(-6px);
 }
-.circles__container__block__link {
-  display: flex;
-  align-items: center;
+
+/* --- ロゴ --- */
+.circles__container__block__link_logo {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 1rem;
+  transition: filter 0.3s ease;
 }
-.circles__container__block__logo {
-  margin-right: 20px;
+
+/* --- サークル名 --- */
+.circles__container__block__link_name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
-.circles__container__block__logo_img {
-  height: 40px;
+
+.circles__container__block:hover .circles__container__block__link_name {
+  color: #fff;
 }
-.circles__container__block_name {
-  font-size: 30px;
-  font-weight: 600;
-}
+
+/* --- 活動場所 --- */
 .circles__container__block_location {
-  font-size: 16px;
-  font-weight: 550;
-  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.5rem;
 }
-.circles__container__block_location .fa-location-dot {
-  margin-right: 5px;
+
+.circles__container__block::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 1rem;
+  padding: 2px;
+  /* 最初は白い枠 */
+  background: #fff;
+  z-index: -1;
+  animation: none;
+}
+
+/* ホバーしたときにグラデーションへ切り替え */
+.circles__container__block:hover::before {
+  background: linear-gradient(270deg, #00f, #0f0, #ff0, #f00, #00f);
+  background-size: 400% 400%;
+  animation: borderGlow 20s linear infinite;
+}
+
+/* 内側の黒背景を維持するため */
+.circles__container__block::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: rgb(0, 0, 0);
+  border-radius: 0.9rem;
+  z-index: -1;
+}
+
+/* グラデーションを動かすアニメーション */
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }/*# sourceMappingURL=circles.css.map */

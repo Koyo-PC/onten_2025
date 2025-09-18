@@ -51,7 +51,7 @@ h1 {
     
 }
 
-@media screen and (max-width: 722px) {
+@media screen and (max-width: 800px) {
     .onten {
         display: flex;
         flex-direction: column;
@@ -59,6 +59,7 @@ h1 {
 
         &_logo {
             width: 80vw;
+            margin-right: 0;
         }
 
         &__datetime {
@@ -210,15 +211,16 @@ h5 {
 }
 .member {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    margin-left: 15px;
 
-    & p {
-        margin: 10px;
+
+    td,th {
+        padding: 2px 8px;
+        font-weight: 400;
+        line-height: 1.4;
+        font-size: 16px;
     }
-
-    &-space {
-        height: 1px;
+    tbody + tbody {
+        border-top: 10px solid transparent; /* 疑似的な margin */
     }
 }

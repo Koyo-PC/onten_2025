@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h1 {
   font-size: 40px;
   font-weight: 600;
@@ -44,7 +45,7 @@ h1 {
   font-weight: 600;
 }
 
-@media screen and (max-width: 722px) {
+@media screen and (max-width: 800px) {
   .onten {
     display: flex;
     flex-direction: column;
@@ -52,6 +53,7 @@ h1 {
   }
   .onten_logo {
     width: 80vw;
+    margin-right: 0;
   }
   .onten__datetime {
     margin-top: -85px;
@@ -142,13 +144,14 @@ h5 {
 
 .member {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin-left: 15px;
 }
-.member p {
-  margin: 10px;
+.member td, .member th {
+  padding: 2px 8px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 16px;
 }
-.member-space {
-  height: 1px;
+.member tbody + tbody {
+  border-top: 10px solid transparent; /* 疑似的な margin */
 }/*# sourceMappingURL=index.css.map */

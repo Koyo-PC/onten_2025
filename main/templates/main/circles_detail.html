@@ -20,7 +20,7 @@
         {% endif %}
         </div>
         <p class="circle_location"><i class="fa-solid fa-location-dot"></i>{{ circle.location }}</p>
-        <p class="circle_introduction">{{ circle.introduction }}</p>
+        <p class="circle_introduction">{{ circle.introduction|safe }}</p>
         
     </div>
 {% endblock %}
