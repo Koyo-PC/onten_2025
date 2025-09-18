@@ -12,14 +12,14 @@
 
 {% block contents %}
     <div class="circle">
-        <p class="circle_name">{{ circle.name }}</p>
+        <h5 class="circle_name">{{ circle.name }}</h5>
         <div class="circle__image">
         {% if circle.logo %}
             <img class="circle__image_logo" src="{{ circle.logo.url }}"/>
         {% else %}
         {% endif %}
         </div>
-        <p class="circle_location"><i class="fa-solid fa-location-dot"></i>{{ circle.location }}</p>
+        <p class="circle_location"><i class="fa-solid fa-location-dot" style="margin-right: 3px;"></i>{{ circle.location }}</p>
         <p class="circle_introduction">{{ circle.introduction|safe }}</p>
         
     </div>

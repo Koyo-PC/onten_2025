@@ -1,0 +1,40 @@
+.circle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__image {
+        // display: flex;
+        // justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        &_logo {
+            width: 50vw;
+            object-fit: contain;
+        }
+    }
+
+    &_location {
+        margin-bottom: 30px;
+    }
+    &_introduction {
+        text-align: start;
+        width: 70vw;
+        overflow-wrap: break-word;  /* 新しい標準的な書き方 */
+        line-height: 1.5;
+    }
+}
+
+
+
+@media screen and (min-width: 620px) {
+    .circle {
+        &__image {
+            &_logo {
+                width: 300px;
+            }
+        }
+        &_introduction {
+            width: 600px;
+        }
+    }
+}

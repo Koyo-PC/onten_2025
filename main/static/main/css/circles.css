@@ -67,61 +67,39 @@
     font-size: 40px;
   }
 }
-/* --- コンテナ --- */
 .circles__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-/* --- 各ブロック --- */
 .circles__container__block {
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding-top: 20px;
+  padding-right: 16px;
+  padding-bottom: 30px;
+  padding-left: 16px;
   overflow: hidden;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   transition: transform 0.3s ease;
+  width: 280px;
+  height: 300px;
+  margin: 15px;
 }
-
 .circles__container__block:hover {
   transform: translateY(-6px);
 }
-
-/* --- ロゴ --- */
-.circles__container__block__link_logo {
-  width: 100%;
-  height: 120px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-bottom: 1rem;
-  transition: filter 0.3s ease;
-}
-
-/* --- サークル名 --- */
-.circles__container__block__link_name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.circles__container__block:hover .circles__container__block__link_name {
+.circles__container__block:hover__link_name {
   color: #fff;
 }
-
-/* --- 活動場所 --- */
-.circles__container__block_location {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-top: 0.5rem;
+.circles__container__block:hover::before {
+  background: linear-gradient(270deg, #00f, #0f0, #ff0, #f00, #00f);
+  background-size: 400% 400%;
+  animation: borderGlow 20s linear infinite;
 }
-
 .circles__container__block::before {
   content: "";
   position: absolute;
@@ -131,20 +109,10 @@
   bottom: -2px;
   border-radius: 1rem;
   padding: 2px;
-  /* 最初は白い枠 */
   background: #fff;
   z-index: -1;
   animation: none;
 }
-
-/* ホバーしたときにグラデーションへ切り替え */
-.circles__container__block:hover::before {
-  background: linear-gradient(270deg, #00f, #0f0, #ff0, #f00, #00f);
-  background-size: 400% 400%;
-  animation: borderGlow 20s linear infinite;
-}
-
-/* 内側の黒背景を維持するため */
 .circles__container__block::after {
   content: "";
   position: absolute;
@@ -156,8 +124,28 @@
   border-radius: 0.9rem;
   z-index: -1;
 }
+.circles__container__block__link_logo {
+  width: 60%;
+  aspect-ratio: 1/1; /* 正方形にする */
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 15px;
+  transition: filter 0.3s ease;
+}
+.circles__container__block__link_name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 8px 0 20px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.circles__container__block_location {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
 
-/* グラデーションを動かすアニメーション */
 @keyframes borderGlow {
   0% {
     background-position: 0% 50%;
@@ -167,5 +155,56 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+.detail-button {
+  background-color: #e7cc23;
+  color: black;
+  padding: 10px;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 690px) {
+  .circles__container__block {
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    transition: transform 0.3s ease;
+    width: 35vw;
+    height: auto;
+    margin: 15px;
+  }
+  .detail-button {
+    padding: 7px;
+    border-radius: 9px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .circles__container__block {
+    overflow: hidden;
+    width: 35vw;
+    height: auto;
+    margin: 7px;
+  }
+  .circles__container__block__link_logo {
+    margin-bottom: 5px;
+  }
+  .circles__container__block__link_name {
+    font-size: 15px;
+    margin: 6px 0 10px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  .circles__container__block_location {
+    font-size: 11px;
+    color: #ccc;
+    margin-top: 10px;
+  }
+  .detail-button {
+    padding: 3px;
+    border-radius: 9px;
+    font-size: 11px;
   }
 }/*# sourceMappingURL=circles.css.map */

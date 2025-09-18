@@ -17,7 +17,6 @@ HOME
     <div class="onten_logo">
         
         <div id="lottie"></div>
-        <!-- <div class="mask"></div> -->
     </div>
     <div class="onten__datetime">
         <p class="onten__datetime_title">燦然</p>
@@ -49,20 +48,89 @@ HOME
     </div>
 </div>
 
+<div class="access">
+    <h5>Access</h5>
+
+    <div class="access__top">
+        <div class="access__top__map">
+            <iframe class="access__top__map_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1378.1540330742152!2d135.3178491202959!3d34.76009754215458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f50!3m3!1m2!1s0x6000f36ab1b8e56b%3A0x41b0ac08629de653!2z55Sy6Zm95a2m6Zmi6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1721999682141!5m2!1sja!2sjp"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="access__top__map_time">
+                阪急電車「甲陽園」駅から約20分<br>
+                阪急/阪神バス「柏堂町」停留所から南へ約5分<br>
+                阪急バス「苦楽園」停留所から約15分
+            </p>
+        </div>
+        <div class="access__top__app">
+            <a class="access__top__app_button" id="openMap" style="cursor: pointer;">甲陽園駅からの詳細経路図</a>
+            <a class="access__top__app_button" onclick="location" href='http://maps.google.com/maps?q=甲陽学院高等学校' target="_blank">Androidの方はこちら</a>
+            <a class="access__top__app_button" onclick="location" href='http://maps.apple.com/maps?q=甲陽学院高等学校' target="_blank">iOSの方はこちら</a>
+        </div>
+        <div id="mapModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="{% static 'main/images/map/koyoseniorhigh.png' %}" alt="甲陽園駅からの詳細経路図" />
+
+            </div>
+        </div>
+        <style>
+            /* モーダルの背景 */
+            .modal {
+                display: none; /* 最初は非表示 */
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.6); /* 半透明の黒 */
+                /* display: flex; */
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* モーダルの中身 */
+            .modal-content {
+                position: relative;
+                margin: 5% auto;
+                padding: 0;
+                width: 90%;
+                max-width: 900px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            }
+
+            .modal-content img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            /* 閉じるボタン */
+            .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            }
+        </style>
+    </div>
+    <div class="access__attention">
+        <p class="access__attention_t"><font face="segoe ui emoji" size="5">&#x26a0;</font>お車でのご来校に関して</p>
+        <p class="access__attention_txt">
+            送迎を含む校内への車の乗り入れは全面禁止です。<br>
+            学校周辺はすべて駐車禁止ですので、ご来校には公共交通機関をご利用ください。<br>
+            例年、北山緑化植物園より「植物園の利用者が駐車できない」との苦情が寄せられております。<br>
+            植物園への駐車もご遠慮ください。
+        </p>
+    </div>
+</div>
+
 <h5>音展委員</h5>
 <div class="member">
-<!-- 
-
-
-        <p>木村凛</p>
-        <p>村上祐太</p>
-        <p>佐藤駿河</p>
-        <div class="member-space"></div>
-        <p>木村壮一郎　森田陽風</p>
-        <p>森賀康祐　堀寛明</p>
-
-
-    </div>  -->
 
     <table>
         <tbody>
@@ -108,7 +176,7 @@ HOME
         </tbody>
 
         <tbody>
-            <tr><th>WEB制作</th><td>木村壮一郎<br>森田陽風<br>森賀康祐<br>堀寛明</td></tr>
+            <tr><th>WEB制作</th><td>木村壮一郎<br>堀寛明<br>森賀康祐<br>森田陽風</td></tr>
         </tbody>
 
     </table>
@@ -123,7 +191,30 @@ HOME
     <script src="{% static 'main/javascript/animation.js' %}"></script>
     <script src="{% static 'main/javascript/animation2.js' %}"></script>
 
+    <script>
+const modal = document.getElementById("mapModal");
+const btn = document.getElementById("openMap");
+const span = document.querySelector(".close");
+
+// ボタンを押したら表示
+btn.onclick = function() {
+//   modal.style.display = "block";
+  modal.style.display = "flex";
+
+}
+
+// ✕を押したら閉じる
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// 背景を押したら閉じる
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+    </script>
 
 {% endblock %}
-
-

@@ -7,7 +7,7 @@ class Circle(models.Model):
     logo = models.ImageField(verbose_name="ロゴ", upload_to="logo/")
     order = models.FloatField(verbose_name="優先順位", default=0)
     location = models.CharField(verbose_name="活動場所", max_length=20)
-    introduction = models.TextField(verbose_name="紹介文（HTML可）")
+    introduction = models.TextField(verbose_name="紹介文（HTML可）" ,blank=True)
     # introduction = models.CharField(max_length=1000, verbose_name="紹介文")
     # account = models.URLField()
 
