@@ -11,64 +11,69 @@ CONCERT
 {% endblock %}
 
 {% block contents %}
-
 <div class="keion_lovers">
-    <p>今年はさらにレベルアップし6バンドが演奏します。史上初の講堂ライブ盛り上げます!</p>
+<p>今年はさらにレベルアップし<br>6バンドが演奏します。史上初の講堂ライブ盛り上げます!</p>
 </div>
 
 <style>
 .keion_lovers {
     background: rgba(255, 255, 255, 0.05);
-    padding: 24px;
+    padding: 24px 16px;
     margin: 20px auto;
-    max-width: 720px;
+    max-width: 90%;
     font-family: "Helvetica Neue", "Noto Sans JP", sans-serif;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 6px 24px rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 光のエフェクトは残す */
+.keion_lovers::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+    animation: rotateGlow 20s linear infinite;
+    z-index: 0;
+}
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .keion_lovers p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #f5f5f5;
-    line-height: 1.7;
-    margin: 0;
-    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    font-size: clamp(0.95rem, 4vw, 1.2rem); /* スマホ幅優先のレスポンシブ文字サイズ */
+    font-weight: 400;
+    line-height: 1.9; /* 行間を広めに */
+    margin: 12px auto;
+    letter-spacing: 0.4px;
+    max-width: 28em; /* 行幅を制限して読みやすく */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    color: #f8f8f8;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
 
-    /* 全体にグラデーション文字 */
-    background: linear-gradient(90deg, #ffffff 0%, #bdbdbd 100%);
+/* 見出しっぽい最初の文 */
+.keion_lovers p:first-child {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad390);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-/* タブレット用（幅 768px 以上） */
-@media (min-width: 768px) {
-    .keion_lovers {
-        padding: 32px;
-        margin: 30px auto;
-    }
-    .keion_lovers p {
-        font-size: 1.4rem;
-        line-height: 1.8;
-    }
-}
-
-/* デスクトップ用（幅 1024px 以上） */
-@media (min-width: 1024px) {
-    .keion_lovers {
-        padding: 40px;
-        margin: 40px auto;
-    }
-    .keion_lovers p {
-        font-size: 1.6rem;
-        line-height: 1.9;
-        letter-spacing: 0.8px;
-    }
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 </style>
+
 
 
 
