@@ -16,5 +16,6 @@ urlpatterns = [
     # path("ranking", views.RankingView.as_view(),name="ranking"),
     path("news",views.NewsView.as_view(),name="news"),
     path("news_detail/<int:pk>", views.NewsDetailView.as_view(), name="news_detail"),
+    path("concert",views.ConcertView.as_view(),name="concert")
 
 ]

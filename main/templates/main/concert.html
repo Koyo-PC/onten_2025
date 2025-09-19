@@ -11,14 +11,176 @@ CONCERT
 {% endblock %}
 
 {% block contents %}
-<div class="content">
-    <div class="text glow" aria-live="polite" aria-atomic="true">
-        <span class="word en">COMING SOON</span>
-        <span class="word jp">近日公開</span>
-    </div>
+<div class="competition">
+    <table>
+        <thead>
+            <tr>
+                <th>予想時間</th>
+                <th>クラス</th>
+                <th>曲名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>9:20</td><td>1A</td><td>ダニーボーイ</td></tr>
+            <tr><td>9:26</td><td>1B</td><td>ロマンチストの豚</td></tr>
+            <tr><td>9:33</td><td>1C</td><td>歌え 歌え！</td></tr>
+            <tr><td>9:39</td><td>1D</td><td>民衆の歌</td></tr>
+            <tr><td>9:46</td><td>2A</td><td>鷗</td></tr>
+            <tr><td>9:53</td><td>2B</td><td>キセキ</td></tr>
+            <tr><td>10:01</td><td>2C</td><td>正解</td></tr>
+            <tr><td>10:09</td><td>2D</td><td>Yell</td></tr>
+            <tr><td>10:16</td><td>3A</td><td>Chessboard</td></tr>
+            <tr><td>10:25</td><td>3B</td><td>心の翼</td></tr>
+            <tr><td>10:32</td><td>3C</td><td>となりのトトロ</td></tr>
+            <tr><td>10:40</td><td>3D</td><td>斎太郎節</td></tr>
+        </tbody>
+    </table>
 </div>
-<p class="txt">ページの完成まで<br>もうしばらくお待ちください！</p>
 
+<div class="performance">
+    <table>
+        <thead>
+            <tr>
+                <th>予想時間</th>
+                <th>クラス/個人名</th>
+                <th>曲名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>12:15</td><td>1A 吉田</td><td>ポロネーズ第三番「英雄」</td></tr>
+            <tr><td>12:23</td><td>1B 北林</td><td>ひばり</td></tr>
+            <tr><td>12:30</td><td>2B 井村</td><td>ピアノソナタ第13番「テンペスト」第3楽章</td></tr>
+            <tr><td>12:36</td><td>2B 岡山</td><td>映像第2集 金色の魚</td></tr>
+            <tr><td>12:41</td><td>2C 大澤</td><td>献呈</td></tr>
+            <tr><td>12:46</td><td>2D 高瀬</td><td>巡礼の年 第2年補遺 「ヴェネツィアとナポリ」 よりタランテラ</td></tr>
+            <tr><td>12:57</td><td>3D 江田</td><td>舟歌 Op.60</td></tr>
+            <tr><td>13:08</td><td>3C 新屋敷</td><td>Esercizio ed Arpeggio</td></tr>
+            <tr><td>13:16</td><td>2A 安國</td><td>無伴奏組曲第3番</td></tr>
+            <tr><td>13:24</td><td>ピアノ五重奏</td><td>チャルダッシュ</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    body {
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        background-color: #121212; /* 黒背景 */
+        color: #e0e0e0; /* 白寄りグレー */
+        margin: 0;
+        padding: 0;
+    }
+
+    .competition, .performance {
+        margin: 40px auto;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #1e1e1e;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 14px 10px;
+    }
+
+    th {
+        background: #68646f;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background: #2a2a2a;
+    }
+
+    tr:nth-child(odd) {
+        background: #1e1e1e;
+    }
+
+    tr:hover {
+        background: #333333;
+        transition: background 0.3s ease;
+    }
+
+    .competition::before {
+        content: "合唱コンクール";
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    .performance::before {
+        content: "個人発表";
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    /* ====== performance（カード風縦積み） ====== */
+    @media (max-width: 600px) {
+        .performance table, 
+        .performance thead, 
+        .performance tbody, 
+        .performance th, 
+        .performance td, 
+        .performance tr {
+            display: block;
+            width: 100%;
+        }
+
+        .performance thead {
+            display: none; /* ヘッダーを非表示 */
+        }
+
+        .performance tr {
+            background: #1e1e1e;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .performance td {
+            text-align: left;
+            padding: 8px 10px;
+            font-size: 15px;
+            border: none;
+        }
+
+        /* 各列に見出しラベルを表示 */
+        .performance td:nth-child(1)::before {
+            content: "予想時間: ";
+            font-weight: bold;
+            color: #bbb;
+        }
+
+        .performance td:nth-child(2)::before {
+            content: "クラス/個人名: ";
+            font-weight: bold;
+            color: #bbb;
+        }
+
+        .performance td:nth-child(3)::before {
+            content: "曲名: ";
+            font-weight: bold;
+            color: #bbb;
+        }
+    }
+</style>
 {% endblock %}
 
 

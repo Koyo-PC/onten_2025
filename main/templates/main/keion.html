@@ -1,0 +1,81 @@
+{% extends "main/base.html" %}      
+{% load static %}
+
+{% block title %}
+CONCERT
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/concert.css' %}">
+{% endblock %}
+
+{% block contents %}
+
+<div class="keion_lovers">
+    <p>今年はさらにレベルアップし6バンドが演奏します。史上初の講堂ライブ盛り上げます!</p>
+</div>
+
+<style>
+.keion_lovers {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    margin: 20px auto;
+    max-width: 720px;
+    font-family: "Helvetica Neue", "Noto Sans JP", sans-serif;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.keion_lovers p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.5px;
+
+    /* 全体にグラデーション文字 */
+    background: linear-gradient(90deg, #ffffff 0%, #bdbdbd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* タブレット用（幅 768px 以上） */
+@media (min-width: 768px) {
+    .keion_lovers {
+        padding: 32px;
+        margin: 30px auto;
+    }
+    .keion_lovers p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+}
+
+/* デスクトップ用（幅 1024px 以上） */
+@media (min-width: 1024px) {
+    .keion_lovers {
+        padding: 40px;
+        margin: 40px auto;
+    }
+    .keion_lovers p {
+        font-size: 1.6rem;
+        line-height: 1.9;
+        letter-spacing: 0.8px;
+    }
+}
+</style>
+
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}   
+
+
