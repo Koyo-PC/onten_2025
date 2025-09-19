@@ -1,17 +1,19 @@
 {% extends "main/base.html" %}      
 {% load static %}
 
-{% block title %}
-2024年度 甲陽学院高等学校 音楽と展覧の会 MAP
-{% endblock %}
+{% block title %}MAP{% endblock %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
 <link rel="stylesheet" href="{% static 'main/css/map.css' %}">
 {% endblock %}
 
-{% block video %}
-{% endblock %}
 {% block contents %}
+
+<h5>Map</h5>
+<div class="map">
+    <img src="{% static 'main/images/map/map_transparent.png' %}" class="map_img">
+</div>
 
 {% endblock %}
 

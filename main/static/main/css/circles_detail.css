@@ -1,34 +1,33 @@
+@charset "UTF-8";
 .circle {
-  margin-top: 40px;
-  margin-left: 30px;
-}
-.circle_name {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .circle__image {
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 .circle__image_logo {
   width: 50vw;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .circle_location {
   margin-bottom: 30px;
-  font-size: 16px;
-  font-weight: 550;
 }
 .circle_introduction {
-  font-size: 17px;
-  width: 80vw;
-  line-height: 2;
-}
-.circle .fa-location-dot {
-  margin-right: 5px;
+  text-align: start;
+  width: 70vw;
+  overflow-wrap: break-word; /* 新しい標準的な書き方 */
+  line-height: 1.5;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 620px) {
   .circle__image_logo {
-    width: 360px;
+    width: 300px;
+  }
+  .circle_introduction {
+    width: 600px;
   }
 }/*# sourceMappingURL=circles_detail.css.map */
