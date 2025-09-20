@@ -5,7 +5,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from .models import Circle, News
+from .models import Circle
 from .forms import (
     CirclesSearchForm,
 )
@@ -74,19 +74,19 @@ class CirclesDetailView(DetailView):
 #         ranking = super().get_queryset().order_by('time')[0:10]
 #         return ranking
     
-class NewsView(ListView):
-    template_name = "main/news.html"
-    model = News
-    context_object_name = "news"
+# class NewsView(ListView):
+#     template_name = "main/news.html"
+#     model = News
+#     context_object_name = "news"
 
-    def get_queryset(self):
-        circles = super().get_queryset().order_by('order')
-        return circles
+#     def get_queryset(self):
+#         circles = super().get_queryset().order_by('order')
+#         return circles
 
-class NewsDetailView(DetailView):
-    template_name = "main/news_detail.html"
-    model = News
-    context_object_name = "news" 
+# class NewsDetailView(DetailView):
+#     template_name = "main/news_detail.html"
+#     model = News
+#     context_object_name = "news" 
 
-class ConcertView(TemplateView):
-    template_name = "main/concert.html"
+# class ConcertView(TemplateView):
+#     template_name = "main/concert.html"

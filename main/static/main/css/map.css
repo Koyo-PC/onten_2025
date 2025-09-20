@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+@media screen and (min-width: 540px) {
+  .map {
+    display: none;
+  }
+}
 .map__list {
   margin-top: 50px;
   width: 60vw;
