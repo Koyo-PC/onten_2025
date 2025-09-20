@@ -1,14 +1,70 @@
+@charset "UTF-8";
 .map {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-.map_img {
-  width: 60vw;
+.map__img {
+  width: 80vw;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.map__container__element {
+  position: absolute;
+  font-weight: 500;
+  font-size: 2vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (min-width: 740px) {
-  .map_img {
-    width: 450px;
-  }
+.map__list {
+  margin-top: 50px;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  color: white; /* 文字は白 */
+  background-color: #000; /* 背景黒 */
+  border-radius: 10px; /* 角丸 */
+  padding: 20px;
+}
+
+.map__list table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+/* ヘッダー */
+.map__list th {
+  text-align: center;
+  padding: 12px;
+  font-size: 18px;
+  border-bottom: 2px solid gold;
+  color: gold;
+}
+
+/* 各セル */
+.map__list td {
+  padding: 10px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* 偶数行・奇数行で交互に色付け */
+.map__list tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05); /* 薄いグレー（黒背景になじむ） */
+}
+
+.map__list tr:nth-child(even) {
+  background-color: rgba(255, 215, 0, 0.1); /* 金色をほんのり */
+}
+
+/* ホバー時に光る */
+.map__list tr:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+  transition: 0.3s;
 }/*# sourceMappingURL=map.css.map */

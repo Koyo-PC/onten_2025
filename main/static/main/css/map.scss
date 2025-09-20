@@ -2,16 +2,88 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
-    &_img {
-        width: 60vw;
+    &__img {
+        // height: 95vh;
+        width: 80vw;
+        display: block;
+        object-fit: cover;
+    }
+
+    &__container {
+
+        &__element {
+            position: absolute;
+            font-weight: 500;
+            font-size: 2vw;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background-color: rgba(0, 255, 255, 0.282);
+            // align-items: center;
+        }
     }
 }
 
-@media screen and (min-width: 740px) {
+// .map-parent {
+//     max-width: 700px;
+// }
+
+@media screen and (min-width: 540px) {
     .map {
-        &_img {
-            width: 450px;
+        &__img {
+            // width: 250px;
         }
     }
+
+}
+
+.map__list {
+    margin-top: 50px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;               /* 文字は白 */
+    background-color: #000;     /* 背景黒 */
+    border-radius: 10px;        /* 角丸 */
+    padding: 20px;
+    // box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* 金色っぽい光 */
+}
+
+.map__list table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* ヘッダー */
+.map__list th {
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    border-bottom: 2px solid gold;
+    color: gold;
+}
+
+/* 各セル */
+.map__list td {
+    padding: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 偶数行・奇数行で交互に色付け */
+.map__list tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* 薄いグレー（黒背景になじむ） */
+}
+.map__list tr:nth-child(even) {
+    background-color: rgba(255, 215, 0, 0.1); /* 金色をほんのり */
+}
+
+/* ホバー時に光る */
+.map__list tr:hover {
+    background-color: rgba(255, 215, 0, 0.3);
+    transition: 0.3s;
 }

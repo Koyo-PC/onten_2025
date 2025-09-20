@@ -1,447 +1,157 @@
-①circle.htmlの一番上に
-    <h5>Circles</h5>
-を追加
+<h5>Map</h5>
+<div class="map">
+    <img src="{% static 'main/images/map/map_transparent.png' %}" class="map__img">
+    <div class="map__container">
 
-②紹介文があるサークルだけcircle.htmlに
-    <p class="circles__container__block__link_name">{{ circle.name }}</p>
-の下に
-    <a class="detail-button" href="{% url 'circles_detail' circle.pk %}">詳細はこちら</a>
-を追加
+        <div class="map__container__element" style="top: 67%; left: 13.5%; width: 11.7%; height: 7.5%; ">1A</div>
+        <div class="map__container__element" style="top: 67%; left: 30%; width: 11.7%; height: 7.5%; ">1B</div>
+        <div class="map__container__element" style="top: 67%; left: 42%; width: 11.7%; height: 7.5%; ">1C</div>
+        <div class="map__container__element" style="top: 67%; left: 53.7%; width: 11.7%; height: 7.5%; ">1D</div>
 
-③circle_detail.htmlで
-    <p class="circle_name">{{ circle.name }}</p>
-から
-    <h5 class="circle_name">{{ circle.name }}</h5>
-に変更
+        <div class="map__container__element" style="top: 74.8%; left: 14.5%; width: 11.7%; height: 7.5%; ">2A</div>
+        <div class="map__container__element" style="top: 74.8%; left: 31%; width: 11.7%; height: 7.5%; ">2B</div>
+        <div class="map__container__element" style="top: 74.8%; left: 43%; width: 11.7%; height: 7.5%; ">2C</div>
+        <div class="map__container__element" style="top: 74.8%; left: 54.7%; width: 11.7%; height: 7.5%; ">2D</div>
 
-④circles.cssを
+        <div class="map__container__element" style="top: 82.4%; left: 15.3%; width: 11.7%; height: 7.5%; ">3A</div>
+        <div class="map__container__element" style="top: 82.4%; left: 32%; width: 11.7%; height: 7.5%; ">3B</div>
+        <div class="map__container__element" style="top: 82.4%; left: 43.5%; width: 11.7%; height: 7.5%; ">3C</div>
+        <div class="map__container__element" style="top: 82.4%; left: 55.3%; width: 11.7%; height: 7.5%; ">3D</div>
+        
+        <div class="map__container__element" style="top: 23%; left: 16.5%; width: 11.7%; height: 7.5%; ">音楽室</div>
+        <div class="map__container__element" style="top: 23%; left: 33.5%; width: 11.7%; height: 7.5%; ">視聴覚室</div>
+        <div class="map__container__element" style="top: 23%; left: 45.5%; width: 11.7%; height: 7.5%; ">物理講義室</div>
+        <div class="map__container__element" style="top: 23%; left: 62.3%; width: 11.7%; height: 7.5%; ">情報教室</div>
+        
+        <div class="map__container__element" style="top: 30.8%; left: 18%; width: 11.7%; height: 7.5%; ">美術室</div>
+        <div class="map__container__element" style="top: 30.8%; left: 34.5%; width: 11.7%; height: 7.5%; ">合併教室</div>
+        <div class="map__container__element" style="top: 30.8%; left: 46.5%; width: 11.7%; height: 7.5%; ">生物講義室</div>
+        <div class="map__container__element" style="top: 30.8%; left: 63.3%; width: 11.7%; height: 7.5%; ">生物実験室</div>
 
-    h5 {
-        text-align: center;
-        font-size: 48px;
-        font-weight: 600;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-    .circles__container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        &__block {
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1rem;
-            text-align: center;
-            padding: 24px 16px;
-            overflow: hidden;
-            backdrop-filter: blur(4px);
-            transition: transform 0.3s ease;
-            width: 280px;
-            height: 300px;
-            margin: 15px;
-
-            &:hover {
-                transform: translateY(-6px);
-
-                &__link_name {
-                    color: #fff;
-                }
-
-                &::before {
-                    background: linear-gradient(
-                        270deg,
-                    #00f, // 青
-                    #0f0, // 緑
-                    #ff0, // 黄
-                    #f00, // 赤
-                    #00f  // 青に戻る
-                    );
-                    background-size: 400% 400%;
-                    animation: borderGlow 20s linear infinite;
-                }
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: -2px;
-                left: -2px;
-                right: -2px;
-                bottom: -2px;
-                border-radius: 1rem;
-                padding: 2px;
-                background: #fff; // 最初は白枠
-                z-index: -1;
-                animation: none;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 2px;
-                left: 2px;
-                right: 2px;
-                bottom: 2px;
-                background: rgba(0, 0, 0);
-                border-radius: 0.9rem;
-                z-index: -1;
-            }
-
-            &__link_logo {
-                width: 60%;
-                // height: 120px;
-                object-fit: contain;
-                margin-bottom: 15px;
-                transition: filter 0.3s ease;
-            }
-
-            &__link_name {
-                font-size: 1.1rem;
-                font-weight: bold;
-                margin: 8px 0 20px;
-                letter-spacing: 1px;
-                transition: color 0.3s ease;
-            }
-
-            &_location {
-                font-size: 0.9rem;
-                color: #ccc;
-                margin-top: 20px;
-                // margin-top: 10px;
-            }
-        }
-    }
-
-    // グラデーションを動かすアニメーション
-    @keyframes borderGlow {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
-    .detail-button {
-        background-color: #e7cc23;
-        color: black;
-        padding: 10px;
-        border-radius: 9px;
-        font-size: 15px;
-    }
-
-    // レスポンシブ
-    @media screen and (max-width: 690px) {
-        .circles__container {
-            &__block {
-                padding: 24px 16px;
-                overflow: hidden;
-                backdrop-filter: blur(4px);
-                transition: transform 0.3s ease;
-                width: 35vw;
-                height: auto;
-                margin: 15px;
-            }
-        }
-
-        .detail-button {
-            padding: 7px;
-            border-radius: 9px;
-            font-size: 13px;
-        }
-    }
-
-    @media screen and (max-width: 540px) {
-        .circles__container {
-            &__block {
-                overflow: hidden;
-                width: 35vw;
-                height: auto;
-                margin: 7px;
-
-                &__link_logo {
-                    // width: 100%;
-                    margin-bottom: 5px;
-                }
-
-                &__link_name {
-                    font-size: 15px;
-                    margin: 6px 0 10px;
-                    letter-spacing: 1px;
-                    transition: color 0.3s ease;
-                }
-
-                &_location {
-                    font-size: 11px;
-                    color: #ccc;
-                    margin-top: 10px;
-                }
-            }
-        }
-
-        .detail-button {
-            padding: 3px;
-            border-radius: 9px;
-            font-size: 11px;
-        }
-    }
-
-に変更
-
-
-⑤circles_detail.cssに
-
-    .circle {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        &__image {
-            // display: flex;
-            // justify-content: center;
-            margin-top: 50px;
-            margin-bottom: 40px;
-            &_logo {
-                width: 50vw;
-                object-fit: contain;
-            }
-        }
-
-        &_location {
-            margin-bottom: 30px;
-        }
-        &_introduction {
-            text-align: start;
-            width: 70vw;
-            overflow-wrap: break-word;  /* 新しい標準的な書き方 */
-            line-height: 1.5;
-        }
-    }
-
-
-
-    @media screen and (min-width: 620px) {
-        .circle {
-            &__image {
-                &_logo {
-                    width: 300px;
-                }
-            }
-            &_introduction {
-                width: 600px;
-            }
-        }
-    }
-
-これを貼り付け
-
-
-⑥index.htmlでアクセス以下
-
-    <div class="access">
-        <h5>Access</h5>
-
-        <div class="access__top">
-            <div class="access__top__map">
-                <iframe class="access__top__map_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1378.1540330742152!2d135.3178491202959!3d34.76009754215458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f50!3m3!1m2!1s0x6000f36ab1b8e56b%3A0x41b0ac08629de653!2z55Sy6Zm95a2m6Zmi6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1721999682141!5m2!1sja!2sjp"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <p class="access__top__map_time">
-                    阪急電車「甲陽園」駅から約20分<br>
-                    阪急/阪神バス「柏堂町」停留所から南へ約5分<br>
-                    阪急バス「苦楽園」停留所から約15分
-                </p>
-            </div>
-            <div class="access__top__app">
-                <a class="access__top__app_button" id="openMap" style="cursor: pointer;">甲陽園駅からの詳細経路図</a>
-                <a class="access__top__app_button" onclick="location" href='http://maps.google.com/maps?q=甲陽学院高等学校' target="_blank">Androidの方はこちら</a>
-                <a class="access__top__app_button" onclick="location" href='http://maps.apple.com/maps?q=甲陽学院高等学校' target="_blank">iOSの方はこちら</a>
-            </div>
-            <div id="mapModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <img src="../../static/main/images/map/koyoseniorhigh.png" alt="甲陽園駅からの詳細経路図" />
-                </div>
-            </div>
-            <style>
-                /* モーダルの背景 */
-                .modal {
-                    display: none; /* 最初は非表示 */
-                    position: fixed;
-                    z-index: 1000;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    overflow: auto;
-                    background-color: rgba(0,0,0,0.6); /* 半透明の黒 */
-                    /* display: flex; */
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                /* モーダルの中身 */
-                .modal-content {
-                    position: relative;
-                    margin: 5% auto;
-                    padding: 0;
-                    width: 90%;
-                    max-width: 900px;
-                    background: #fff;
-                    border-radius: 8px;
-                    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-                }
-
-                .modal-content img {
-                    width: 100%;
-                    border-radius: 8px;
-                }
-
-                /* 閉じるボタン */
-                .close {
-                position: absolute;
-                top: 10px;
-                right: 15px;
-                font-size: 28px;
-                font-weight: bold;
-                color: #333;
-                cursor: pointer;
-                }
-            </style>
-        </div>
-        <div class="access__attention">
-            <p class="access__attention_t"><font face="segoe ui emoji" size="5">&#x26a0;</font>お車でのご来校に関して</p>
-            <p class="access__attention_txt">
-                送迎を含む校内への車の乗り入れは全面禁止です。<br>
-                学校周辺はすべて駐車禁止ですので、ご来校には公共交通機関をご利用ください。<br>
-                例年、北山緑化植物園より「植物園の利用者が駐車できない」との苦情が寄せられております。<br>
-                植物園への駐車もご遠慮ください。
-            </p>
-        </div>
-    </div>
-
-    <h5>音展委員</h5>
-    <div class="member">
-
-        <table>
-            <tbody>
-                <tr><th>委員長</th><td>正木俊太</td></tr>
-                <tr><th>副委員長</th><td>木村凛<br>鵜川賢人<br>中村理人</td></tr>
-            </tbody>
-
-            <tbody>
-                <tr><th>音楽会</th><td>花房大貴</td></tr>
-            </tbody>
-
-            <tbody>
-                <tr><th>内規</th><td>福地誠之介</td></tr>
-                <tr><th>予算・会計</th><td>中村理人</td></tr>
-                <tr><th>備品管理</th><td>上野聡太</td></tr>
-                <tr><th>黒本</th><td>浦田泰成</td></tr>
-                <tr><th>印刷</th><td>川本啓太</td></tr>
-                <tr><th>パンフレット</th><td>武田健佑</td></tr>
-                <tr><th>受付</th><td>加柴平慈</td></tr>
-                <tr><th>金券</th><td>井村颯</td></tr>
-                <tr><th>広報</th><td>田中深森</td></tr>
-            </tbody>
-
-            <tbody>
-                <tr><th>運動場企画</th><td>城戸翼</td></tr>
-                <tr><th>中央ステージ</th><td>吉井聡明</td></tr>
-                <tr><th>縁日</th><td>北井碧</td></tr>
-                <tr><th>クイズ</th><td>山名雄大</td></tr>
-                <tr><th>テーブルゲーム</th><td>越智俊介</td></tr>
-                <tr><th>PR動画</th><td>吉井聡明</td></tr>
-                <tr><th>スタンプラリー</th><td>川島圭太郎</td></tr>
-                <tr><th>占い</th><td>太田煌士</td></tr>
-                <tr><th>ジェットコースター</th><td>鵜川賢人</td></tr>
-                <tr><th>喫茶</th><td>入江森太郎</td></tr>
-                <tr><th>屋台</th><td>菊川晃誠</td></tr>
-                <tr><th></th><td></td></tr>
-            </tbody>
-
-            <tbody>
-                <tr><th>校内装飾</th><td>木村凛</td></tr>
-                <tr><th>モニュメント</th><td>村上祐太</td></tr>
-                <tr><th>案内</th><td>佐藤駿河</td></tr>
-            </tbody>
-
-            <tbody>
-                <tr><th>WEB制作</th><td>木村壮一郎<br>堀寛明<br>森賀康祐<br>森田陽風</td></tr>
-            </tbody>
-
-        </table>
+        <div class="map__container__element" style="top: 38.6%; left: 18.8%; width: 11.7%; height: 7.5%; ">図書室</div>
+        <div class="map__container__element" style="top: 38.6%; left: 35.5%; width: 11.7%; height: 7.5%; ">世界史教室</div>
+        <div class="map__container__element" style="top: 38.6%; left: 47.3%; width: 11.7%; height: 7.5%; ">化学講義室</div>
+        <div class="map__container__element" style="top: 38.6%; left: 64%; width: 11.7%; height: 7.5%; ">化学実験室</div>
 
     </div>
+    
+</div>
+<div class="map__list">
+    <table border="1">
+        <tr><th>教室</th><th>団体</th></tr>
+
+        <tr><td>1A</td><td>軽音同好会</td></tr>
+        <tr><td>1B</td><td>鉄道同好会<br>囲碁同好会</td></tr>
+        <tr><td>1C</td><td>にゃんこ同好会<br>VTuber同好会</td></tr>
+        <tr><td>1D</td><td>地歴部・写真部</td></tr>
+
+        <tr><td>2A</td><td>ジェットコースター</td></tr>
+        <tr><td>2B</td><td>占い</td></tr>
+        <tr><td>2C</td><td>テーブルゲーム</td></tr>
+        <tr><td>2D</td><td>将棋部・折り紙同好会</td></tr>
+
+        <tr><td>3A</td><td>喫茶</td></tr>
+        <tr><td>3B</td><td>喫茶</td></tr>
+        <tr><td>3C</td><td>喫茶<br>水泳ハンド同好会<br>スタンプラリー</td></tr>
+        <tr><td>3D</td><td>夜ふかし同好会<br>PR動画</td></tr>
 
 
-            </main>
-            
+        <tr><td>視聴覚室</td><td>物理部</td></tr>
+        <tr><td>物理講義室</td><td>PC同好会</td></tr>
+        <tr><td>美術室</td><td>美術部</td></tr>
+        <tr><td>合併教室</td><td>アンサンブル部</td></tr>
+        <tr><td>生物講義室</td><td>謎解き同好会</td></tr>
+        <tr><td>生物実験室</td><td>生物部</td></tr>
+        <tr><td>図書室</td><td>文芸部</td></tr>
+        <tr><td>世界史教室</td><td>縁日</td></tr>
+        <tr><td>化学講義室</td><td>数学同好会</td></tr>
+        <tr><td>化学実験室</td><td>化学部</td></tr>
+    </table>
+</div>
 
 
-            <footer class="footer">
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 
-                <div class="footer__logo">
-                    <img class="footer__logo_img" src="/static/main/images/logo/footer.png" >
-                    <p class="footer__logo_title">78TH KOYO ONTEN 2025</p>
-                </div>
+    &__img {
+        // height: 95vh;
+        width: 80vw;
+        display: block;
+        object-fit: cover;
+    }
 
-                <div class="footer__link">
+    &__container {
 
-                    <div class="footer__link__box">
-                        <p class="footer__link__box_txt">音楽と展覧の会</p>
+        &__element {
+            position: absolute;
+            font-weight: 500;
+            font-size: 9px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background-color: rgba(0, 255, 255, 0.282);
+            // align-items: center;
+        }
+    }
+}
 
-                        <a href="https://x.com/koyo_onten" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/koyo_onten" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+@media screen and (min-width: 540px) {
+    .map {
+        &__img {
+            // width: 250px;
+        }
+    }
 
-                    <div class="footer__link__box">
-                        <p class="footer__link__box_txt">PC同好会</p>
+}
 
-                        <a href="https://x.com/koyo_pc" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/koyo_pclovers" target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+.map__list {
+    margin-top: 50px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;               /* 文字は白 */
+    background-color: #000;     /* 背景黒 */
+    border-radius: 10px;        /* 角丸 */
+    padding: 20px;
+    // box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* 金色っぽい光 */
+}
 
-                </div>
+.map__list table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
 
-            </footer>
+/* ヘッダー */
+.map__list th {
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    border-bottom: 2px solid gold;
+    color: gold;
+}
 
-            <script src="/static/main/javascript/base.js"></script>
-            <script src="https://kit.fontawesome.com/a8a91bec89.js" crossorigin="anonymous"></script>
-            
-        <script src="/static/main/javascript/countdown.js"></script>
-        <script src="/static/main/javascript/animation.js"></script>
-        <script src="/static/main/javascript/animation2.js"></script>
+/* 各セル */
+.map__list td {
+    padding: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+}
 
-        <script>
-            const modal = document.getElementById("mapModal");
-            const btn = document.getElementById("openMap");
-            const span = document.querySelector(".close");
+/* 偶数行・奇数行で交互に色付け */
+.map__list tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* 薄いグレー（黒背景になじむ） */
+}
+.map__list tr:nth-child(even) {
+    background-color: rgba(255, 215, 0, 0.1); /* 金色をほんのり */
+}
 
-            // ボタンを押したら表示
-            btn.onclick = function() {
-            //   modal.style.display = "block";
-            modal.style.display = "flex";
-
-            }
-
-            // ✕を押したら閉じる
-            span.onclick = function() {
-            modal.style.display = "none";
-            }
-
-            // 背景を押したら閉じる
-            window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-            }
-
-        </script>
-        </body>
-    </html>
-
-に変更
-koyoseniorhigh.pngの配置もお願い
-
+/* ホバー時に光る */
+.map__list tr:hover {
+    background-color: rgba(255, 215, 0, 0.3);
+    transition: 0.3s;
+}

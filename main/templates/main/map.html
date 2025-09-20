@@ -11,10 +11,78 @@
 {% block contents %}
 
 <h5>Map</h5>
-<div class="map">
-    <img src="{% static 'main/images/map/map_transparent.png' %}" class="map_img">
+<div class="map-parent">
+    <div class="map">
+        <img src="{% static 'main/images/map/map_transparent.png' %}" class="map__img">
+        <div class="map__container">
+    
+            <div class="map__container__element" style="top: 67%; left: 13.5%; width: 11.7%; height: 7.5%; ">1A</div>
+            <div class="map__container__element" style="top: 67%; left: 30%; width: 11.7%; height: 7.5%; ">1B</div>
+            <div class="map__container__element" style="top: 67%; left: 42%; width: 11.7%; height: 7.5%; ">1C</div>
+            <div class="map__container__element" style="top: 67%; left: 53.7%; width: 11.7%; height: 7.5%; ">1D</div>
+    
+            <div class="map__container__element" style="top: 74.8%; left: 14.5%; width: 11.7%; height: 7.5%; ">2A</div>
+            <div class="map__container__element" style="top: 74.8%; left: 31%; width: 11.7%; height: 7.5%; ">2B</div>
+            <div class="map__container__element" style="top: 74.8%; left: 43%; width: 11.7%; height: 7.5%; ">2C</div>
+            <div class="map__container__element" style="top: 74.8%; left: 54.7%; width: 11.7%; height: 7.5%; ">2D</div>
+    
+            <div class="map__container__element" style="top: 82.4%; left: 15.3%; width: 11.7%; height: 7.5%; ">3A</div>
+            <div class="map__container__element" style="top: 82.4%; left: 32%; width: 11.7%; height: 7.5%; ">3B</div>
+            <div class="map__container__element" style="top: 82.4%; left: 43.5%; width: 11.7%; height: 7.5%; ">3C</div>
+            <div class="map__container__element" style="top: 82.4%; left: 55.3%; width: 11.7%; height: 7.5%; ">3D</div>
+            
+            <div class="map__container__element" style="top: 23%; left: 16.5%; width: 11.7%; height: 7.5%; ">音楽室</div>
+            <div class="map__container__element" style="top: 23%; left: 33.5%; width: 11.7%; height: 7.5%; ">視聴覚室</div>
+            <div class="map__container__element" style="top: 23%; left: 45.5%; width: 11.7%; height: 7.5%; ">物理講義室</div>
+            <div class="map__container__element" style="top: 23%; left: 62.3%; width: 11.7%; height: 7.5%; ">情報教室</div>
+            
+            <div class="map__container__element" style="top: 30.8%; left: 18%; width: 11.7%; height: 7.5%; ">美術室</div>
+            <div class="map__container__element" style="top: 30.8%; left: 34.5%; width: 11.7%; height: 7.5%; ">合併教室</div>
+            <div class="map__container__element" style="top: 30.8%; left: 46.5%; width: 11.7%; height: 7.5%; ">生物講義室</div>
+            <div class="map__container__element" style="top: 30.8%; left: 63.3%; width: 11.7%; height: 7.5%; ">生物実験室</div>
+    
+            <div class="map__container__element" style="top: 38.6%; left: 18.8%; width: 11.7%; height: 7.5%; ">図書室</div>
+            <div class="map__container__element" style="top: 38.6%; left: 35.5%; width: 11.7%; height: 7.5%; ">世界史教室</div>
+            <div class="map__container__element" style="top: 38.6%; left: 47.3%; width: 11.7%; height: 7.5%; ">化学講義室</div>
+            <div class="map__container__element" style="top: 38.6%; left: 64%; width: 11.7%; height: 7.5%; ">化学実験室</div>
+    
+        </div>
+        
+    </div>
+    <div class="map__list">
+        <table border="1">
+            <tr><th>教室</th><th>団体</th></tr>
+    
+            <tr><td>1A</td><td>軽音同好会</td></tr>
+            <tr><td>1B</td><td>鉄道同好会<br>囲碁同好会</td></tr>
+            <tr><td>1C</td><td>にゃんこ同好会<br>VTuber同好会</td></tr>
+            <tr><td>1D</td><td>地歴部・写真部</td></tr>
+    
+            <tr><td>2A</td><td>ジェットコースター</td></tr>
+            <tr><td>2B</td><td>占い</td></tr>
+            <tr><td>2C</td><td>テーブルゲーム</td></tr>
+            <tr><td>2D</td><td>将棋部・折り紙同好会</td></tr>
+    
+            <tr><td>3A</td><td>喫茶</td></tr>
+            <tr><td>3B</td><td>喫茶</td></tr>
+            <tr><td>3C</td><td>喫茶<br>水泳ハンド同好会<br>スタンプラリー</td></tr>
+            <tr><td>3D</td><td>夜ふかし同好会<br>PR動画</td></tr>
+    
+    
+            <tr><td>視聴覚室</td><td>物理部</td></tr>
+            <tr><td>物理講義室</td><td>PC同好会</td></tr>
+            <tr><td>美術室</td><td>美術部</td></tr>
+            <tr><td>合併教室</td><td>アンサンブル部</td></tr>
+            <tr><td>生物講義室</td><td>謎解き同好会</td></tr>
+            <tr><td>生物実験室</td><td>生物部</td></tr>
+            <tr><td>図書室</td><td>文芸部</td></tr>
+            <tr><td>世界史教室</td><td>縁日</td></tr>
+            <tr><td>化学講義室</td><td>数学同好会</td></tr>
+            <tr><td>化学実験室</td><td>化学部</td></tr>
+        </table>
+    </div>
+    
 </div>
-
 {% endblock %}
 
 
