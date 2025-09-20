@@ -89,6 +89,6 @@ class NewsDetailView(DetailView):
     context_object_name = "news" 
 
 class ConcertView(ListView):
-    template_name = "main/keion.html"
+    template_name = "main/concert.html"
     model = News
     context_object_name = "news"
