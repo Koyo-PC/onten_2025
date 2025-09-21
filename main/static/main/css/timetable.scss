@@ -1,0 +1,190 @@
+// @charset "UTF-8";/*スタイルシートの文字コードをUTF-8に設定*/
+// /* ========== 全体のスタイル ========== */
+
+// body {
+//             background-color: #000000; /* 背景色 */
+//             color: #ffffff; /* 基本の文字色 */
+//             width: auto;
+//             min-width: auto;
+//             padding: 2em 0;
+//         }
+        
+        :root { --header-h: 50px; } /* ヘッダー高さを変えるときはここを書き換える */
+
+        .timetable-wrapper-wrapper{
+            max-height: calc(100vh - 6rem);
+            overflow-x: auto;
+        }
+
+        .timetable-wrapper {
+            width: auto;
+            max-width: 100vw;
+            z-index: 2;
+            padding-top: 0px;
+        }
+
+        /* ========== タイムテーブルのコンテナ ========== */
+        .timetable {
+            display: grid;
+            margin: 0 auto;
+            text-align: center;
+            /* 列の定義: [時間軸] [講堂] [中央ステージ] [合併教室] [1A教室] [生物講義室]  */
+            grid-template-columns: 60px /* 時間軸の幅 */ repeat(5, 1fr);
+            /* 行の定義: [ヘッダー] + 9時台〜15時台 (5分ごとに1行) */
+            /* 9:00 ~ 15:00 なので (15-9)*12= 72行 + ヘッダー1行 */
+            grid-template-rows: 50px repeat(73, 40px /* 5分あたりの高さ */);
+            width: 1200px;
+            max-width: none;
+            vertical-align: top;
+            background: #181818; // ← 追加（黒系で馴染みやすい色）
+            border-radius: 12px; // 丸角
+            box-shadow: 0 2px 16px #0008; // 影
+        }
+
+        /* ========== 時間軸と場所のヘッダー ========== */
+        .time-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .subject {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: var(--header-h);
+            font-weight: bold;
+            font-size: 0.9em;
+            background-color: #000000; 
+            top: 0px;
+            position: sticky;
+            z-index: 10;
+            grid-row: 1;
+        }
+
+        /* ========== 時間軸のラベル (9, 10, ...) ========== */
+        .time-label {
+            grid-column: 1; /* 最初の列に配置 */
+            border-top: 1px solid #ffffff; /* グリッド線の色 */
+            font-size: 1.2em;
+            color: #ffffff;
+            position: sticky;
+            left: 0;
+            z-index: 2; /* ヘッダーよりは奥、イベントよりは手前に表示 */
+        }
+
+        /* 各時間ラベルを行の先頭に配置 */
+        .time-label-9  { grid-row: 2; }
+        .time-label-10 { grid-row: 14; } /* 9:00から12行後 (1時間後) */
+        .time-label-11 { grid-row: 26; }
+        .time-label-12 { grid-row: 38; }
+        .time-label-13 { grid-row: 50; }
+        .time-label-14 { grid-row: 62; }
+        .time-label-15 { grid-row: 74; }
+
+
+        /* ========== イベントブロックのスタイル ========== */
+        .event {
+            background-color: #424242; /* イベントブロックの背景色 */
+            border-radius: 8px;
+            padding: 10px;
+            margin: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.9em;
+            overflow: hidden;
+        }
+
+        .event-title {
+            display: block;
+            font-weight: bold;
+        }
+
+        .event-time {
+            display: block;
+            font-weight: bold;
+        }
+
+        /* ========== 各イベントの位置指定 ========== */
+        /* grid-column: [場所の列番号]; */
+        /* grid-row: [開始時間に対応する行番号] / span [イベント時間5分単位)の行数]; */
+
+        /* --- 講堂 (2列目) --- */
+        #event-opening { grid-column: 2; grid-row: 5 / span 1; }
+        #event-gradeone { grid-column: 2; grid-row: 6 / span 5; }
+        #event-gradetwo { grid-column: 2; grid-row: 11 / span 6; }
+        #event-gradethree { grid-column: 2; grid-row: 17 / span 8; }
+        #event-gree { grid-column: 2; grid-row: 25 / span 5; }
+        #event-ensemble { grid-column: 2; grid-row: 30 / span 6; }
+        #event-award { grid-column: 2; grid-row: 36 / span 2; }
+        #event-yoshida { grid-column: 2; grid-row: 41 / span 2; }
+        #event-kitabayashi { grid-column: 2; grid-row: 43 / span 1; }
+        #event-imura { grid-column: 2; grid-row: 44 / span 1; }
+        #event-okayama { grid-column: 2; grid-row: 45 / span 1; }
+        #event-osawa { grid-column: 2; grid-row: 46 / span 1; }
+        #event-takase { grid-column: 2; grid-row: 47 / span 2; }
+        #event-eda { grid-column: 2; grid-row: 49 / span 3; }
+        #event-shinyashiki { grid-column: 2; grid-row: 52 / span 1; }
+        #event-yasukuni { grid-column: 2; grid-row: 53 / span 2; }
+        #event-piano { grid-column: 2; grid-row: 55 / span 1; }
+        #event-closing { grid-column: 2; grid-row: 56 / span 1; }
+        #event-unknown { grid-column: 2; grid-row: 57 / span 2; }
+        #event-gechi { grid-column: 2; grid-row: 62 / span 5; }
+        #event-nayn { grid-column: 2; grid-row: 68 / span 6; }
+
+
+        /* --- 中央ステージ (3列目) --- */
+        #event-song { grid-column: 3; grid-row: 36 / span 7; }
+        #event-quiz { grid-column: 3; grid-row: 43 / span 13; }
+        #event-miscon { grid-column: 3; grid-row: 56 / span 7; }
+        #event-song2 { grid-column: 3; grid-row: 63 / span 9; }
+        #event-finale { grid-column: 3; grid-row: 72 / span 2; }
+        
+        /* --- 合併教室 (4列目) --- */
+        #event-first { grid-column: 4; grid-row: 47 / span 8; }
+        #event-second { grid-column: 4; grid-row: 56 / span 9; }
+        #event-third { grid-column: 4; grid-row: 66 / span 4; }
+        
+        /* --- 1A教室 (5列目) --- */
+        #event-jd { grid-column: 5; grid-row: 30 / span 4; }
+        #event-sb { grid-column: 5; grid-row: 36 / span 4; }
+        #event-fn { grid-column: 5; grid-row: 40 / span 4; }
+        #event-frag { grid-column: 5; grid-row: 44 / span 4; }
+
+        /* --- 生物講義室 (6列目) --- */
+        #event-nazo1 { grid-column: 6; grid-row: 17 / span 7; }
+        #event-nazo2 { grid-column: 6; grid-row: 26 / span 7; }
+        #event-nazo3 { grid-column: 6; grid-row: 35 / span 7; }
+        #event-nazo4 { grid-column: 6; grid-row: 66 / span 7; }
+
+        /* --- 講堂 (オレンジ・暖色系) --- */
+        #event-opening, #event-gradeone, #event-gradetwo, #event-gradethree,
+        #event-gree, #event-ensemble, #event-award, #event-yoshida,
+        #event-kitabayashi, #event-imura, #event-okayama, #event-osawa,
+        #event-takase, #event-eda, #event-shinyashiki, #event-yasukuni,
+        #event-piano, #event-closing, #event-gechi, #event-nayn {
+        background: linear-gradient(135deg, #E53935, #B71C1C);
+        }
+
+        /* --- 中央ステージ (ブルー系) --- */
+        #event-song, #event-quiz, #event-miscon, #event-song2, #event-finale {
+        background: linear-gradient(135deg, #FF9800, #F57C00);
+        }
+
+        /* --- 合併教室 (グリーン系) --- */
+        #event-first, #event-second, #event-third {
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        }
+
+        /* --- 1A教室 (ピンク系) --- */
+        #event-jd, #event-sb, #event-fn, #event-frag {
+        background: linear-gradient(135deg, #0288D1, #039BE5);
+        }
+
+        /* --- 生物講義室 (パープル系) --- */
+        #event-nazo1, #event-nazo2, #event-nazo3, #event-nazo4 {
+        background: linear-gradient(135deg, #0D47A1, #1976D2);
+        }

@@ -11,6 +11,9 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.map__img-sp {
+  display: none;
+}
 .map__container__element {
   position: absolute;
   font-weight: 500;
@@ -21,9 +24,15 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 570px) {
   .map {
     display: none;
+  }
+  .map__img-sp {
+    display: block;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .map__list {
