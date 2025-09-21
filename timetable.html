@@ -1,0 +1,81 @@
+{% extends "main/base.html" %}      
+{% load static %}
+
+{% block title %}
+2024年度 甲陽学院高等学校 音楽と展覧の会 TIMETABLE
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/base.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/timetable.css' %}">
+{% endblock %}
+
+
+{% block contents %}
+<div class="timetable-wrapper">
+    <div class="timetable">
+        <div class="header"><!-- ここにはなにも書かない--></div>
+        <div class="header">講堂</div>
+        <div class="header">中央ステージ</div>
+        <div class="header">合併教室</div>
+        <div class="header">1A教室</div>
+        <div class="header">生物講義室</div>
+
+        <div class="time-label time-label-9">9</div>
+        <div class="time-label time-label-10">10</div>
+        <div class="time-label time-label-11">11</div>
+        <div class="time-label time-label-12">12</div>
+        <div class="time-label time-label-13">13</div>
+        <div class="time-label time-label-14">14</div>
+        <div class="time-label time-label-15">15</div>
+
+        <div class="event" id="event-opening"><span class="event-title">音楽会　開演</span><span class="event-time"></span></div>
+        <div class="event" id="event-gradeone"><span class="event-title">1年クラス合唱</span><span class="event-time">9:20 -</span></div>
+        <div class="event" id="event-gradetwo"><span class="event-title">2年クラス合唱</span><span class="event-time">9:46 -</span></div>
+        <div class="event" id="event-gradethree"><span class="event-title">3年クラス合唱</span><span class="event-time">10:16 -</span></div>
+        <div class="event" id="event-gree"><span class="event-title">グリー</span><span class="event-time">10:55 -</span></div>
+        <div class="event" id="event-ensemble"><span class="event-title">アンサンブル</span><span class="event-time">11:20 -</span></div>
+        <div class="event" id="event-award"><span class="event-title">表彰式</span><span class="event-time">11:50 -</span></div>
+        <div class="event" id="event-yoshida"><span class="event-title">1A吉田/個人演奏</span><span class="event-time">12:15 -</span></div>
+        <div class="event" id="event-kitabayashi"><span class="event-title">1B北林/個人演奏　12:23 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-imura"><span class="event-title">2B井村/個人演奏　12:30 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-okayama"><span class="event-title">2B岡山/個人演奏　12:36 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-osawa"><span class="event-title">2C大澤/個人演奏　12:41 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-takase"><span class="event-title">2D高瀬/個人演奏</span><span class="event-time">12:46 -</span></div>
+        <div class="event" id="event-eda"><span class="event-title">3D江田/個人演奏</span><span class="event-time">12:57 -</span></div>
+        <div class="event" id="event-shinyashiki"><span class="event-title">3C新屋敷/個人演奏　13:08 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-yasukuni"><span class="event-title">2A安國/個人演奏</span><span class="event-time">13:16 -</span></div>
+        <div class="event" id="event-piano"><span class="event-title">ピアノ4重奏　13:24 -</span><span class="event-time"></span></div>
+        <div class="event" id="event-closing"><span class="event-title">音楽会　終演</span><span class="event-time"></span></div>
+        <div class="event" id="event-unknown"><span class="event-title">？？？</span><span class="event-time">13:35</span></div>
+        <div class="event" id="event-gechi"><span class="event-title">軽音　ゲチピエロ</span><span class="event-time">14:00 -</span></div>
+        <div class="event" id="event-nayn"><span class="event-title">軽音　Nayn</span><span class="event-time">14:30 -</span></div>
+
+
+        
+        <div class="event" id="event-song"><span class="event-title">歌唱</span><span class="event-time">11:50 -</span></div>
+        <div class="event" id="event-quiz"><span class="event-title">クイズ</span><span class="event-time">12:25 -</span></div>
+        <div class="event" id="event-miscon"><span class="event-title">ミスコン</span><span class="event-time">13:30 -</span></div>
+        <div class="event" id="event-song2"><span class="event-title">歌唱</span><span class="event-time">14:05 -</span></div>
+        <div class="event" id="event-finale"><span class="event-title">フィナーレ</span><span class="event-time"></span></div>
+        
+        <div class="event" id="event-first"><span class="event-title">アンサンブル　1部</span><span class="event-time">12:45 -</span></div>
+        <div class="event" id="event-second"><span class="event-title">アンサンブル　2部</span><span class="event-time">13:28 -</span></div>
+        <div class="event" id="event-third"><span class="event-title">アンサンブル　3部</span><span class="event-time">14:18 -</span></div>
+
+        <div class="event" id="event-jd"><span class="event-title">軽音　Jhon Does</span><span class="event-time">11:20 -</span></div>
+        <div class="event" id="event-sb"><span class="event-title">軽音　Smells Bad</span><span class="event-time">11:50 -</span></div>
+        <div class="event" id="event-fn"><span class="event-title">軽音　FromNar°</span><span class="event-time">12:10 -</span></div>
+        <div class="event" id="event-frag"><span class="event-title">軽音　Fragmeteor</span><span class="event-time">12:30 -</span></div>
+
+        <div class="event" id="event-nazo1"><span class="event-title">謎解き　1部<br>脱出ゲーム</span><span class="event-time">10:15 -</span></div>
+        <div class="event" id="event-nazo2"><span class="event-title">謎解き　2部<br>脱出ゲーム</span><span class="event-time">11:00 -</span></div>
+        <div class="event" id="event-nazo3"><span class="event-title">謎解き　3部<br>脱出ゲーム</span><span class="event-time">11:45 -</span></div>
+        <div class="event" id="event-nazo4"><span class="event-title">謎解き　4部<br>脱出ゲーム</span><span class="event-time">14:10 -</span></div>
+
+    </div>
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}   
