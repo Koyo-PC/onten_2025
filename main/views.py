@@ -9,6 +9,8 @@ from .models import Circle
 from .forms import (
     CirclesSearchForm,
 )
+import random
+from django.shortcuts import redirect
 
 
 class IndexView(TemplateView):
@@ -90,3 +92,10 @@ class CirclesDetailView(DetailView):
 
 # class ConcertView(TemplateView):
 #     template_name = "main/concert.html"
+
+def random_circle(request):
+    circles = Circle.objects.all()
+    if not circles.exists():
+        return redirect("home")  # サークルが無ければTOPに戻す
+    circle = random.choice(circles)
+    return redirect(circle.get_absolute_url())
