@@ -8,13 +8,11 @@ class Circle(models.Model):
     order = models.FloatField(verbose_name="優先順位", default=0)
     location = models.CharField(verbose_name="活動場所", max_length=20)
     introduction = models.TextField(verbose_name="紹介文（HTML可）" ,blank=True)
-    # introduction = models.CharField(max_length=1000, verbose_name="紹介文")
-    # account = models.URLField()
 
     def __str__(self):
         return self.name
     def get_absolute_url(self):
-        return reverse()
+        return reverse("circles_detail", args=[self.pk])
     
 class Ranking(models.Model):
     name = models.CharField(verbose_name="ニックネーム", max_length=20)

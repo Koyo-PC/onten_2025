@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}      
+{% load static %}
+
+{% block title %}
+CONCERT
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/circles.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/concert.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="content">
+    <div class="text glow" aria-live="polite" aria-atomic="true">
+        <span class="word en">COMING SOON</span>
+        <span class="word jp">近日公開</span>
+    </div>
+</div>
+<p class="txt">ページの完成まで<br>もうしばらくお待ちください！</p>
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}   
+
+
