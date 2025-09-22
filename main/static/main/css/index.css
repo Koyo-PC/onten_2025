@@ -69,6 +69,15 @@ h1 {
   font-weight: 600;
   margin-bottom: 30px;
 }
+.countdown__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.countdown__text_txt {
+  font-size: 25px;
+}
 .countdown__dhms {
   display: flex;
   flex-direction: row;
