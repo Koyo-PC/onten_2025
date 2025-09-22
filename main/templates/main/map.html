@@ -11,6 +11,25 @@
 
 <h5>Map</h5>
 <div class="map-parent">
+    <div class="text">
+        <p class="text_p">※金券(1枚50円)は昇降口前で販売しています。</p>
+        <table class="text__content">
+            <tbody>
+                <tr><td>男子トイレ</td><td>屋外</td><td>ハンドボールコート側</td></tr>
+                <tr><td></td><td>生徒棟(南館)</td><td>2F〜4F　A組側</td></tr>
+                <tr><td></td><td>特別棟(北館)</td><td>3F</td></tr>
+                <tr><td></td><td>講堂</td><td></td></tr>
+            </tbody>
+
+            <tbody>
+                <tr><td>女子トイレ</td><td>屋外</td><td>ピロティ　多目的トイレ</td></tr>
+                <tr><td></td><td>生徒棟(南館)</td><td>2F〜4F　D組側</td></tr>
+                <tr><td></td><td>特別棟(北館)</td><td>2F・4F</td></tr>
+                <tr><td></td><td>講堂</td><td></td></tr>
+            </tbody>
+
+        </table>
+    </div>
     <div class="map">
         <img src="{% static 'main/images/map/map_transparent.png' %}" class="map__img">
 
@@ -55,32 +74,32 @@
         <table border="1">
             <tr><th>教室</th><th>団体</th></tr>
     
-            <tr><td>1A</td><td>軽音同好会</td></tr>
-            <tr><td>1B</td><td>鉄道同好会<br>囲碁同好会</td></tr>
-            <tr><td>1C</td><td>にゃんこ同好会<br>VTuber同好会</td></tr>
-            <tr><td>1D</td><td>地歴部・写真部</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 13 %}', '_blank')" style="cursor:pointer;"><td>1A</a></td><td>軽音同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>1B</a></td><td>鉄道同好会<br>囲碁同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>1C</a></td><td>にゃんこ同好会<br>VTuber同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>1D</a></td><td>地歴部<br>写真部</td></tr>
     
-            <tr><td>2A</td><td>ジェットコースター</td></tr>
-            <tr><td>2B</td><td>占い</td></tr>
-            <tr><td>2C</td><td>テーブルゲーム</td></tr>
-            <tr><td>2D</td><td>将棋部・折り紙同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 20 %}', '_blank')" style="cursor:pointer;"><td>2A</td><td>ジェットコースター</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 21 %}', '_blank')" style="cursor:pointer;"><td>2B</td><td>占い</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>2C</td><td>テーブルゲーム</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>2D</td><td>将棋部<br>折り紙同好会</td></tr>
     
-            <tr><td>3A</td><td>喫茶</td></tr>
-            <tr><td>3B</td><td>喫茶</td></tr>
-            <tr><td>3C</td><td>喫茶<br>水泳ハンド同好会<br>スタンプラリー</td></tr>
-            <tr><td>3D</td><td>夜ふかし同好会<br>PR動画</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>3A</td><td>喫茶</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>3B</td><td>喫茶</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>3C</td><td>喫茶<br>水泳ハンド同好会<br>スタンプラリー</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>3D</td><td>夜ふかし同好会<br>PR動画</td></tr>
     
     
-            <tr><td>視聴覚室</td><td>物理部</td></tr>
-            <tr><td>物理講義室</td><td>PC同好会</td></tr>
-            <tr><td>美術室</td><td>美術部</td></tr>
-            <tr><td>合併教室</td><td>アンサンブル部</td></tr>
-            <tr><td>生物講義室</td><td>謎解き同好会</td></tr>
-            <tr><td>生物実験室</td><td>生物部</td></tr>
-            <tr><td>図書室</td><td>文芸部</td></tr>
-            <tr><td>世界史教室</td><td>縁日</td></tr>
-            <tr><td>化学講義室</td><td>数学同好会</td></tr>
-            <tr><td>化学実験室</td><td>化学部</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 4 %}', '_blank')" style="cursor:pointer;"><td>視聴覚室</td><td>物理部</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 1 %}', '_blank')" style="cursor:pointer;"><td>物理講義室</td><td>PC同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 8 %}', '_blank')" style="cursor:pointer;"><td>美術室</td><td>美術部</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>合併教室</td><td>アンサンブル部</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 6 %}', '_blank')" style="cursor:pointer;"><td>生物講義室</td><td>謎解き同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 5 %}', '_blank')" style="cursor:pointer;"><td>生物実験室</td><td>生物部</td></tr>
+            <tr onclick="window.open('{% url 'circles' %}', '_blank')" style="cursor:pointer;"><td>図書室</td><td>文芸部</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 11 %}', '_blank')" style="cursor:pointer;"><td>世界史教室</td><td>縁日</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 2 %}', '_blank')" style="cursor:pointer;"><td>化学講義室</td><td>数学同好会</td></tr>
+            <tr onclick="window.open('{% url 'circles_detail' 9 %}', '_blank')" style="cursor:pointer;"><td>化学実験室</td><td>化学部</td></tr>
         </table>
     </div>
     
